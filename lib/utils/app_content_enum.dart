@@ -1,0 +1,4 @@
+enum AppContentEnum {
+  PrivacyPolicy,
+  About,
+}
