@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 library custom_switch;
 
 import 'package:fantasy_gaming/utils/common_function.dart';
@@ -35,8 +37,8 @@ class _CustomSwitchState extends State<CustomSwitch>
   @override
   void initState() {
     super.initState();
-    _animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 60));
+    _animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 60));
     _circleAnimation = AlignmentTween(
             begin: widget.value ? Alignment.centerRight : Alignment.centerLeft,
             end: widget.value ? Alignment.centerLeft : Alignment.centerRight)
@@ -71,7 +73,7 @@ class _CustomSwitchState extends State<CustomSwitch>
                 : BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0),
                     color: Colors.grey.shade200,
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: Color(0xffa3b1c6), // darker color
                       ),
@@ -92,7 +94,7 @@ class _CustomSwitchState extends State<CustomSwitch>
                 children: <Widget>[
                   _circleAnimation.value == Alignment.centerRight
                       ? Padding(
-                          padding: const EdgeInsets.only(left: 25.0, right:0 ),
+                          padding: const EdgeInsets.only(left: 25.0, right: 0),
                           child: Text(
                             "",
                             // widget.activeText,
@@ -108,7 +110,7 @@ class _CustomSwitchState extends State<CustomSwitch>
                     child: Container(
                       width: 20.0,
                       height: 20.0,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           shape: BoxShape.circle, color: Colors.white),
                     ),
                   ),

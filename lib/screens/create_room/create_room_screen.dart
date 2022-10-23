@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CreateRoomScreen extends GetView<CreateRoomController> {
+  const CreateRoomScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -14,9 +16,7 @@ class CreateRoomScreen extends GetView<CreateRoomController> {
         child: ScreenHeader(title: 'create_room'.tr, onBack: () {}),
         preferredSize: Size(MediaQuery.of(context).size.width, 80.0),
       ),
-      body: Container(
-        child: Text("CR"),
-      ),
+      body: const Text("CR"),
     );
   }
 }

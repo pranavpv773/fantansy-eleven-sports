@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class NotificationScreen extends GetView<NotificationController> {
+  const NotificationScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -21,7 +23,6 @@ class NotificationScreen extends GetView<NotificationController> {
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.only(left: 20, right: 20),
-
           child: Column(
             children: [
               const SizedBox(height: 30),
@@ -32,17 +33,16 @@ class NotificationScreen extends GetView<NotificationController> {
                       Expanded(
                         child: Text('show_notifications'.tr,
                             style: TextStyle(
-                                color: CommonFunction.textThemeColor(),
-                                fontSize: dimen12,
-                                fontFamily: AppConstants.appFontFamily,
-                                )),
+                              color: CommonFunction.textThemeColor(),
+                              fontSize: dimen12,
+                              fontFamily: AppConstants.appFontFamily,
+                            )),
                       ),
                       CustomSwitch(
                         activeColor: Colors.pinkAccent,
                         value: controller.showNotification.value,
                         onChanged: (value) => controller.showNotification(),
                       ),
-
                     ],
                   ))),
               const SizedBox(height: 10),
@@ -53,10 +53,10 @@ class NotificationScreen extends GetView<NotificationController> {
                       Expanded(
                         child: Text('allow'.tr,
                             style: TextStyle(
-                                color: CommonFunction.textThemeColor(),
-                                fontSize: dimen12,
-                                fontFamily: AppConstants.appFontFamily,
-                                )),
+                              color: CommonFunction.textThemeColor(),
+                              fontSize: dimen12,
+                              fontFamily: AppConstants.appFontFamily,
+                            )),
                       ),
                       CustomSwitch(
                         activeColor: Colors.pinkAccent,
@@ -74,15 +74,16 @@ class NotificationScreen extends GetView<NotificationController> {
                       Expanded(
                         child: Text('message'.tr,
                             style: TextStyle(
-                                color: CommonFunction.textThemeColor(),
-                                fontSize: dimen12,
-                                fontFamily: AppConstants.appFontFamily,
-                               )),
+                              color: CommonFunction.textThemeColor(),
+                              fontSize: dimen12,
+                              fontFamily: AppConstants.appFontFamily,
+                            )),
                       ),
                       CustomSwitch(
                         activeColor: Colors.pinkAccent,
                         value: controller.msgNotification.value,
-                        onChanged: (value) => controller.togglemsgNotification(),
+                        onChanged: (value) =>
+                            controller.togglemsgNotification(),
                       ),
                     ],
                   ))),

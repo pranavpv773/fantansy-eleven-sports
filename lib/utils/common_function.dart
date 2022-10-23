@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:fantasy_gaming/utils/app_constants.dart';
 import 'package:fantasy_gaming/utils/dimens.dart';
 import 'package:fantasy_gaming/utils/theme/app_colors.dart';
@@ -157,7 +155,6 @@ class CommonFunction {
         statusBarBrightness: Brightness.light));
   }
 
-
   //selected card box decoration
   static selectedCardDecoration() {
     return BoxDecoration(
@@ -165,6 +162,7 @@ class CommonFunction {
       borderRadius: BorderRadius.circular(12),
     );
   }
+
   //Unselected card box decoration
   static unSelectedCardDecoration() {
     return BoxDecoration(
@@ -173,6 +171,4 @@ class CommonFunction {
       borderRadius: BorderRadius.circular(12),
     );
   }
-
 }
-

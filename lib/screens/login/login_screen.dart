@@ -6,13 +6,14 @@ import 'package:fantasy_gaming/utils/routes/app_routes.dart';
 import 'package:fantasy_gaming/utils/screen_header.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../utils/theme/app_colors.dart';
 import 'login_controller.dart';
 
 class LoginScreen extends GetView<LoginController> {
+  const LoginScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -27,10 +28,8 @@ class LoginScreen extends GetView<LoginController> {
         ),
         body: SingleChildScrollView(
             child: Container(
-              margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
+          margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
           child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-
-
             SizedBox(
               height: 138,
               width: MediaQuery.of(context).size.width,
@@ -45,7 +44,9 @@ class LoginScreen extends GetView<LoginController> {
 
             Obx(
               () => Container(
-                margin: const EdgeInsets.only(top: 30,),
+                margin: const EdgeInsets.only(
+                  top: 30,
+                ),
                 decoration: controller.emailText.isNotEmpty
                     ? CommonFunction.activeBoxDecoration()
                     : CommonFunction.inactiveBoxDecoration(),
@@ -54,18 +55,16 @@ class LoginScreen extends GetView<LoginController> {
                         boarderRadius: 12.0),
                     child: Row(
                       children: [
-                         SizedBox(
+                        SizedBox(
                           width: dimen16,
                         ),
-                        Image.asset(
-                          Res.ic_email,
-                          width: dimen20,
-                          height: dimen20,
+                        Image.asset(Res.ic_email,
+                            width: dimen20,
+                            height: dimen20,
                             color: controller.emailText.isNotEmpty
                                 ? CommonFunction.textThemeColor()
-                                :Get.theme.hintColor
-                        ),
-                         SizedBox(
+                                : Get.theme.hintColor),
+                        SizedBox(
                           width: dimen16,
                         ),
                         Expanded(
@@ -77,8 +76,7 @@ class LoginScreen extends GetView<LoginController> {
                                   border: InputBorder.none,
                                   hintStyle: TextStyle(
                                       fontSize: dimen12,
-                                      fontFamily:
-                                          AppConstants.appFontFamily,
+                                      fontFamily: AppConstants.appFontFamily,
                                       color: AppColors.hintColor)),
                               onChanged: (String text) {
                                 controller.onChangedEmail(text);
@@ -110,19 +108,16 @@ class LoginScreen extends GetView<LoginController> {
                         boarderRadius: 12.0),
                     child: Row(
                       children: [
-                         SizedBox(
+                        SizedBox(
                           width: dimen16,
                         ),
-                        Image.asset(
-                          Res.ic_lock,
-                          width: dimen20,
-                          height: dimen20,
+                        Image.asset(Res.ic_lock,
+                            width: dimen20,
+                            height: dimen20,
                             color: controller.passwordText.isNotEmpty
                                 ? CommonFunction.textThemeColor()
-                                :Get.theme.hintColor
-
-                        ),
-                         SizedBox(
+                                : Get.theme.hintColor),
+                        SizedBox(
                           width: dimen16,
                         ),
                         Expanded(
@@ -135,8 +130,7 @@ class LoginScreen extends GetView<LoginController> {
                                   border: InputBorder.none,
                                   hintStyle: TextStyle(
                                       fontSize: dimen12,
-                                      fontFamily:
-                                          AppConstants.appFontFamily,
+                                      fontFamily: AppConstants.appFontFamily,
                                       color: AppColors.hintColor)),
                               onChanged: (String text) {
                                 controller.onChangedPassword(text);
@@ -167,7 +161,6 @@ class LoginScreen extends GetView<LoginController> {
                         SizedBox(
                           width: dimen10,
                         ),
-
                       ],
                     )),
               ),
@@ -198,7 +191,6 @@ class LoginScreen extends GetView<LoginController> {
                     splashFactory: NoSplash.splashFactory,
                     onTap: () {
                       controller.isValid();
-
                     },
                     child: Center(
                       child: Text('login'.tr,
@@ -212,10 +204,10 @@ class LoginScreen extends GetView<LoginController> {
             Center(
               child: Text("or".tr,
                   style: TextStyle(
-                      color: CommonFunction.textThemeColor(),
-                      fontSize: dimen12,
-                      fontFamily: AppConstants.appFontFamily,
-                      )),
+                    color: CommonFunction.textThemeColor(),
+                    fontSize: dimen12,
+                    fontFamily: AppConstants.appFontFamily,
+                  )),
             ),
 
             GestureDetector(
@@ -237,8 +229,7 @@ class LoginScreen extends GetView<LoginController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding:
-                          const EdgeInsets.only( right: 12),
+                          padding: const EdgeInsets.only(right: 12),
                           child: Image.asset(
                             Res.ic_google,
                             width: dimen20,
@@ -265,17 +256,17 @@ class LoginScreen extends GetView<LoginController> {
                         TextSpan(
                             text: "don’t_have_account".tr,
                             style: TextStyle(
-                                color: CommonFunction.textThemeColor(),
-                                fontSize: dimen12,
-                                fontFamily: AppConstants.appFontFamily,
-                                )),
+                              color: CommonFunction.textThemeColor(),
+                              fontSize: dimen12,
+                              fontFamily: AppConstants.appFontFamily,
+                            )),
                         TextSpan(
-                            text: "  "+"sign_up".tr,
+                            text: "  " + "sign_up".tr,
                             style: TextStyle(
-                                color: AppColors.gradientColor1,
-                                fontSize: dimen12,
-                                fontFamily: AppConstants.appFontFamily,
-                                ),
+                              color: AppColors.gradientColor1,
+                              fontSize: dimen12,
+                              fontFamily: AppConstants.appFontFamily,
+                            ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () async {
                                 Get.offNamed(AppRoutes.register);

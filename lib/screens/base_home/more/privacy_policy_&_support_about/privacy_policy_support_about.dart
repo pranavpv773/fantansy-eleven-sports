@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:fantasy_gaming/utils/app_constants.dart';
 import 'package:fantasy_gaming/utils/common_function.dart';
 import 'package:fantasy_gaming/utils/dimens.dart';
@@ -8,6 +10,8 @@ import 'package:get/get.dart';
 import 'privacy_policy_support_about_controller.dart';
 
 class PrivacyPolicyAboutScreen extends GetView<PrivacyPolicyAboutController> {
+  const PrivacyPolicyAboutScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -31,12 +35,12 @@ class PrivacyPolicyAboutScreen extends GetView<PrivacyPolicyAboutController> {
                       padding: const EdgeInsets.only(bottom: 15),
                       child: Text("about_fanWelt_app".tr,
                           style: TextStyle(
-                              color: CommonFunction.textThemeColor(),
-                              fontSize: dimen15,
-                              height: 2,
-                              wordSpacing: 3,
-                              fontFamily: AppConstants.appFontFamily,
-                              )),
+                            color: CommonFunction.textThemeColor(),
+                            fontSize: dimen15,
+                            height: 2,
+                            wordSpacing: 3,
+                            fontFamily: AppConstants.appFontFamily,
+                          )),
                     )
                   : Container()),
               Obx(
@@ -44,12 +48,12 @@ class PrivacyPolicyAboutScreen extends GetView<PrivacyPolicyAboutController> {
                     child: Text(controller.subTitle.value,
                         textAlign: TextAlign.start,
                         style: TextStyle(
-                            color: CommonFunction.textThemeColor(),
-                            fontSize: dimen12,
-                            height: 2,
-                            wordSpacing: 3,
-                            fontFamily: AppConstants.appFontFamily,
-                            ))),
+                          color: CommonFunction.textThemeColor(),
+                          fontSize: dimen12,
+                          height: 2,
+                          wordSpacing: 3,
+                          fontFamily: AppConstants.appFontFamily,
+                        ))),
               )
             ],
           ),

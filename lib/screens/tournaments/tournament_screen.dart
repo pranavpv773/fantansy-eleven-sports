@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TournamentScreen extends GetView<TournamentController> {
+  const TournamentScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -32,7 +34,8 @@ class TournamentScreen extends GetView<TournamentController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 15),
                       decoration: CommonFunction.boxDecoration(),
                       child: Wrap(
                         crossAxisAlignment: WrapCrossAlignment.center,
@@ -76,11 +79,12 @@ class TournamentScreen extends GetView<TournamentController> {
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return InkWell(
-                    onTap: (){
+                    onTap: () {
                       Get.toNamed(AppRoutes.tournamentMatch);
                     },
                     child: Container(
-                      margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
+                      margin:
+                          const EdgeInsets.only(top: 30, left: 20, right: 20),
                       child: Column(
                         children: [
                           Container(
@@ -89,13 +93,16 @@ class TournamentScreen extends GetView<TournamentController> {
                               padding: const EdgeInsets.all(1.9),
                               child: Container(
                                 padding: const EdgeInsets.all(15),
-                                decoration: CommonFunction.unSelectedCardDecoration(),
+                                decoration:
+                                    CommonFunction.unSelectedCardDecoration(),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     Row(
-                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Image.asset(
                                           Res.ic_profile_placeholder,
@@ -106,15 +113,20 @@ class TournamentScreen extends GetView<TournamentController> {
                                           width: 10,
                                         ),
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
                                               'Ashes',
                                               style: TextStyle(
-                                                color: CommonFunction.textThemeColor(),
-                                                fontFamily: AppConstants.appFontFamily,
-                                                fontWeight: AppConstants.semiBoldFont,
+                                                color: CommonFunction
+                                                    .textThemeColor(),
+                                                fontFamily:
+                                                    AppConstants.appFontFamily,
+                                                fontWeight:
+                                                    AppConstants.semiBoldFont,
                                               ),
                                             ),
                                             const SizedBox(
@@ -123,9 +135,12 @@ class TournamentScreen extends GetView<TournamentController> {
                                             Text(
                                               '54 Matches',
                                               style: TextStyle(
-                                                color: CommonFunction.textThemeColor(),
-                                                fontFamily: AppConstants.appFontFamily,
-                                                fontWeight: AppConstants.regularFont,
+                                                color: CommonFunction
+                                                    .textThemeColor(),
+                                                fontFamily:
+                                                    AppConstants.appFontFamily,
+                                                fontWeight:
+                                                    AppConstants.regularFont,
                                               ),
                                             )
                                           ],

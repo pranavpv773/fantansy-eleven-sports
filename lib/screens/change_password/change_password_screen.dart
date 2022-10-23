@@ -10,6 +10,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class ChangePasswordScreen extends GetView<ChangePasswordController> {
+  const ChangePasswordScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();

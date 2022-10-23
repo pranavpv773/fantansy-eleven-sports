@@ -5,20 +5,22 @@ import 'package:get/get.dart';
 import 'splash_controller.dart';
 
 class SplashScreen extends GetView<SplashController> {
+  const SplashScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<SplashController>(builder: (controller) {
       return Scaffold(
         backgroundColor: Get.theme.backgroundColor,
         body: Container(
-          decoration: const BoxDecoration(gradient: CommonFunction.themeGradient),
+          decoration:
+              const BoxDecoration(gradient: CommonFunction.themeGradient),
           child: Center(
             child: Image.asset(
               Res.ic_splash_logo,
               height: 180,
               width: 180,
             ),
-
           ),
         ),
       );

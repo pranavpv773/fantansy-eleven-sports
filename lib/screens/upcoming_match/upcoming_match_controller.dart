@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:fantasy_gaming/utils/app_constants.dart';
 import 'package:fantasy_gaming/utils/common_function.dart';
 import 'package:fantasy_gaming/utils/dimens.dart';
@@ -7,22 +9,22 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class UpcomingMatchController extends GetxController {
-
   var isSelected = 0.obs;
 
-
-  Widget getItemContainer(bool isSelected){
+  Widget getItemContainer(bool isSelected) {
     return Container(
       margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
       child: Column(
         children: [
           Container(
-            decoration:  CommonFunction.selectedCardDecoration(),
+            decoration: CommonFunction.selectedCardDecoration(),
             child: Padding(
               padding: const EdgeInsets.all(1.9),
               child: Container(
                 padding: const EdgeInsets.all(15),
-                decoration: isSelected ? CommonFunction.selectedCardDecoration():CommonFunction.unSelectedCardDecoration(),
+                decoration: isSelected
+                    ? CommonFunction.selectedCardDecoration()
+                    : CommonFunction.unSelectedCardDecoration(),
                 child: Column(
                   children: [
                     Row(
@@ -31,7 +33,9 @@ class UpcomingMatchController extends GetxController {
                         Text(
                           'OPPO IPL',
                           style: TextStyle(
-                            color: isSelected ?CommonFunction.selectedTextThemeColor():CommonFunction.textThemeColor(),
+                            color: isSelected
+                                ? CommonFunction.selectedTextThemeColor()
+                                : CommonFunction.textThemeColor(),
                             fontSize: dimen13,
                             fontFamily: AppConstants.appFontFamily,
                             fontWeight: AppConstants.semiBoldFont,
@@ -41,7 +45,9 @@ class UpcomingMatchController extends GetxController {
                           Res.ic_notification,
                           width: 20,
                           height: 20,
-                          color: isSelected ?CommonFunction.selectedTextThemeColor():CommonFunction.textThemeColor(),
+                          color: isSelected
+                              ? CommonFunction.selectedTextThemeColor()
+                              : CommonFunction.textThemeColor(),
                         ),
                       ],
                     ),
@@ -61,7 +67,9 @@ class UpcomingMatchController extends GetxController {
                             Text(
                               'Rajasthan Royals',
                               style: TextStyle(
-                                color: isSelected ?CommonFunction.selectedTextThemeColor():CommonFunction.textThemeColor(),
+                                color: isSelected
+                                    ? CommonFunction.selectedTextThemeColor()
+                                    : CommonFunction.textThemeColor(),
                                 fontSize: dimen10,
                                 fontFamily: AppConstants.appFontFamily,
                                 fontWeight: AppConstants.regularFont,
@@ -71,7 +79,8 @@ class UpcomingMatchController extends GetxController {
                               crossAxisAlignment: WrapCrossAlignment.center,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 10, bottom: 10, right: 10),
+                                  padding: const EdgeInsets.only(
+                                      top: 10, bottom: 10, right: 10),
                                   child: Image.asset(
                                     Res.ic_mi_logo,
                                     width: 40,
@@ -82,7 +91,10 @@ class UpcomingMatchController extends GetxController {
                                 Text(
                                   'RR',
                                   style: TextStyle(
-                                    color: isSelected ?CommonFunction.selectedTextThemeColor():CommonFunction.textThemeColor(),
+                                    color: isSelected
+                                        ? CommonFunction
+                                            .selectedTextThemeColor()
+                                        : CommonFunction.textThemeColor(),
                                     fontFamily: AppConstants.appFontFamily,
                                     fontWeight: AppConstants.semiBoldFont,
                                   ),
@@ -94,7 +106,9 @@ class UpcomingMatchController extends GetxController {
                         Text(
                           '7 hrs',
                           style: TextStyle(
-                            color: isSelected ?CommonFunction.selectedTextThemeColor():CommonFunction.textThemeColor(),
+                            color: isSelected
+                                ? CommonFunction.selectedTextThemeColor()
+                                : CommonFunction.textThemeColor(),
                             fontSize: dimen11,
                             fontFamily: AppConstants.appFontFamily,
                             fontWeight: AppConstants.semiBoldFont,
@@ -107,7 +121,9 @@ class UpcomingMatchController extends GetxController {
                               Text(
                                 'Chennai Super Kings',
                                 style: TextStyle(
-                                  color: isSelected ?CommonFunction.selectedTextThemeColor():CommonFunction.textThemeColor(),
+                                  color: isSelected
+                                      ? CommonFunction.selectedTextThemeColor()
+                                      : CommonFunction.textThemeColor(),
                                   fontSize: dimen10,
                                   fontFamily: AppConstants.appFontFamily,
                                   fontWeight: AppConstants.regularFont,
@@ -119,13 +135,17 @@ class UpcomingMatchController extends GetxController {
                                   Text(
                                     'CSK',
                                     style: TextStyle(
-                                      color: isSelected ?CommonFunction.selectedTextThemeColor():CommonFunction.textThemeColor(),
+                                      color: isSelected
+                                          ? CommonFunction
+                                              .selectedTextThemeColor()
+                                          : CommonFunction.textThemeColor(),
                                       fontFamily: AppConstants.appFontFamily,
                                       fontWeight: AppConstants.semiBoldFont,
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(top: 10, bottom: 10, left: 10),
+                                    padding: const EdgeInsets.only(
+                                        top: 10, bottom: 10, left: 10),
                                     child: Image.asset(
                                       Res.ic_dc_logo,
                                       width: 40,
@@ -149,10 +169,13 @@ class UpcomingMatchController extends GetxController {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                gradient: isSelected ? CommonFunction.themeSolidGradient: CommonFunction.themeGradient,
+                                gradient: isSelected
+                                    ? CommonFunction.themeSolidGradient
+                                    : CommonFunction.themeGradient,
                                 borderRadius: BorderRadius.circular(30),
                               ),
-                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 5),
                               child: Text(
                                 'PRICE',
                                 style: TextStyle(
@@ -166,7 +189,9 @@ class UpcomingMatchController extends GetxController {
                             Text(
                               '10 Crore',
                               style: TextStyle(
-                                color: isSelected ?CommonFunction.selectedTextThemeColor():CommonFunction.textThemeColor(),
+                                color: isSelected
+                                    ? CommonFunction.selectedTextThemeColor()
+                                    : CommonFunction.textThemeColor(),
                                 fontSize: dimen10,
                                 fontFamily: AppConstants.appFontFamily,
                               ),
@@ -180,7 +205,9 @@ class UpcomingMatchController extends GetxController {
                             Text(
                               '4:1',
                               style: TextStyle(
-                                color: isSelected ?CommonFunction.selectedTextThemeColor():CommonFunction.textThemeColor(),
+                                color: isSelected
+                                    ? CommonFunction.selectedTextThemeColor()
+                                    : CommonFunction.textThemeColor(),
                                 fontSize: dimen10,
                                 fontFamily: AppConstants.appFontFamily,
                               ),
@@ -188,7 +215,9 @@ class UpcomingMatchController extends GetxController {
                             Text(
                               'WD',
                               style: TextStyle(
-                                color: isSelected ?CommonFunction.selectedTextThemeColor():CommonFunction.textThemeColor(),
+                                color: isSelected
+                                    ? CommonFunction.selectedTextThemeColor()
+                                    : CommonFunction.textThemeColor(),
                                 fontSize: dimen10,
                                 fontFamily: AppConstants.appFontFamily,
                               ),
@@ -206,5 +235,4 @@ class UpcomingMatchController extends GetxController {
       ),
     );
   }
-
 }

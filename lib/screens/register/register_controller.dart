@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:dio/dio.dart';
 import 'package:fantasy_gaming/models/auth.dart';
 import 'package:fantasy_gaming/network_provider/api_provider.dart';
 import 'package:fantasy_gaming/utils/app_constants.dart';
@@ -29,7 +28,6 @@ class RegisterController extends GetxController {
 
   String stringDeviceType = Platform.operatingSystem;
 
-
   ProgressDialog progressDialog = ProgressDialog();
 
   onChangedEmail(text) {
@@ -48,8 +46,6 @@ class RegisterController extends GetxController {
     securityPhraseText.value = text;
   }
 
-
-
   isValid() {
     if (!GetUtils.isEmail(emailText.toString())) {
       CommonFunction.failedSnackBar("enter_email".tr);
@@ -59,7 +55,7 @@ class RegisterController extends GetxController {
       CommonFunction.failedSnackBar("enter_conf_password".tr);
     } else if (securityPhraseText.isEmpty) {
       CommonFunction.failedSnackBar("enter_security_phrase".tr);
-    }else if (passwordText.toString().length < 8  ) {
+    } else if (passwordText.toString().length < 8) {
       CommonFunction.failedSnackBar("error_pass_length".tr);
     } else if (passwordText.toString() != confirmPasswordText.toString()) {
       CommonFunction.failedSnackBar("error_confirm_pass".tr);
@@ -83,7 +79,8 @@ class RegisterController extends GetxController {
       progressDialog.dismiss();
       if (!auth.error!) {
         GetStorage().write(AppConstants.isLoggedIn, true);
-        GetStorage().write(AppConstants.user, auth.data![0].toJson().toString());
+        GetStorage()
+            .write(AppConstants.user, auth.data![0].toJson().toString());
         Get.offAllNamed(AppRoutes.baseHome);
         CommonFunction.successSnackBar("Success: ${auth.message}");
       } else {

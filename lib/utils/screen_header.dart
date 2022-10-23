@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -13,7 +14,7 @@ class ScreenHeader extends StatelessWidget {
   String title;
   Function? onBack;
 
-  ScreenHeader({required this.title, this.onBack});
+  ScreenHeader({Key? key, required this.title, this.onBack}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

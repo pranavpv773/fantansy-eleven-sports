@@ -8,10 +8,11 @@ import 'package:fantasy_gaming/utils/screen_header.dart';
 import 'package:fantasy_gaming/utils/theme/app_colors.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class ForgotPasswordScreen extends GetView<ForgotPasswordController> {
+  const ForgotPasswordScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -146,11 +147,10 @@ class ForgotPasswordScreen extends GetView<ForgotPasswordController> {
                         ))),
               ),
             ),
-            SizedBox(height: 80),
+            const SizedBox(height: 80),
             Container(
                 height: dimen42,
-                margin:
-                    const EdgeInsets.only(top: 50, bottom: 16),
+                margin: const EdgeInsets.only(top: 50, bottom: 16),
                 decoration: CommonFunction.boxDecoration(),
                 child: InkWell(
                     splashFactory: NoSplash.splashFactory,

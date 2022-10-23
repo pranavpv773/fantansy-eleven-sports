@@ -15,7 +15,7 @@ import 'utils/theme/theme_service.dart';
 Future<void> main() async {
   await GetStorage.init(); // add this
   _initLog();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 void _initLog() {
@@ -23,8 +23,9 @@ void _initLog() {
   Log.setLevel(Level.ALL);
 }
 
-
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {

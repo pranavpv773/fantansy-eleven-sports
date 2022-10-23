@@ -10,6 +10,8 @@ import 'package:get/get.dart';
 import '../../utils/dimens.dart';
 
 class BaseHomeScreen extends GetView<BaseHomeController> {
+  const BaseHomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -77,7 +79,8 @@ class BaseHomeScreen extends GetView<BaseHomeController> {
         bottomNavigationBar: Obx(() => Container(
               decoration: const BoxDecoration(
                 boxShadow: <BoxShadow>[
-                  BoxShadow(color: Colors.black26, blurRadius: 15.0, spreadRadius: 1)
+                  BoxShadow(
+                      color: Colors.black26, blurRadius: 15.0, spreadRadius: 1)
                 ],
               ),
               child: BottomNavigationBar(
@@ -85,11 +88,15 @@ class BaseHomeScreen extends GetView<BaseHomeController> {
                 showUnselectedLabels: true,
                 showSelectedLabels: true,
 
-                unselectedItemColor:AppColors.hintColor,
-                selectedItemColor:CommonFunction.textThemeColor(),
+                unselectedItemColor: AppColors.hintColor,
+                selectedItemColor: CommonFunction.textThemeColor(),
                 backgroundColor: Get.theme.backgroundColor,
-                selectedLabelStyle: TextStyle(color: CommonFunction.textThemeColor(), fontSize: dimen12),
-                unselectedLabelStyle: TextStyle(color: AppColors.hintColor, fontSize: dimen12, fontFamily: AppConstants.appFontFamily),
+                selectedLabelStyle: TextStyle(
+                    color: CommonFunction.textThemeColor(), fontSize: dimen12),
+                unselectedLabelStyle: TextStyle(
+                    color: AppColors.hintColor,
+                    fontSize: dimen12,
+                    fontFamily: AppConstants.appFontFamily),
                 items: <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
                     icon: Container(
