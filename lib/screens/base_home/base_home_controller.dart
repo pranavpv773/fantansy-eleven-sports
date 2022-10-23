@@ -5,24 +5,23 @@ import 'package:fantasy_gaming/screens/base_home/wallet/wallet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class BaseHomeController extends GetxController{
+class BaseHomeController extends GetxController {
   var selectedIndex = 0.obs;
 
-  var  bottomChildren = <Widget>[].obs;
+  var bottomChildren = <Widget>[].obs;
 
   @override
-  void onInit(){
+  void onInit() {
     bottomChildren.value = [
-      HomeScreen(),
-      ContestScreen(),
-      WalletScreen(),
-      MoreScreen(),
+      const HomeScreen(),
+      const ContestScreen(),
+      const WalletScreen(),
+      const MoreScreen(),
     ];
     super.onInit();
   }
 
-  onSelectChild(index){
+  onSelectChild(index) {
     selectedIndex.value = index;
   }
-
 }

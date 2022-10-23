@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class UpcomingMatchScreen extends GetView<UpcomingMatchController> {
+  const UpcomingMatchScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -15,10 +17,7 @@ class UpcomingMatchScreen extends GetView<UpcomingMatchController> {
       backgroundColor: Get.theme.backgroundColor,
       appBar: PreferredSize(
         child: ScreenHeader(title: 'upcoming_matches'.tr, onBack: () {}),
-        preferredSize: Size(MediaQuery
-            .of(context)
-            .size
-            .width, 80.0),
+        preferredSize: Size(MediaQuery.of(context).size.width, 80.0),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -34,7 +33,8 @@ class UpcomingMatchScreen extends GetView<UpcomingMatchController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 15),
                       decoration: CommonFunction.boxDecoration(),
                       child: Wrap(
                         crossAxisAlignment: WrapCrossAlignment.center,
@@ -79,10 +79,11 @@ class UpcomingMatchScreen extends GetView<UpcomingMatchController> {
                 itemBuilder: (context, index) {
                   return Obx(() {
                     return InkWell(
-                      onTap: (){
-                        controller.isSelected.value = index;
-                      },
-                      child: controller.getItemContainer(controller.isSelected.value == index));
+                        onTap: () {
+                          controller.isSelected.value = index;
+                        },
+                        child: controller.getItemContainer(
+                            controller.isSelected.value == index));
                   });
                 },
               ),

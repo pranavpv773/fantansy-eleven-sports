@@ -10,6 +10,8 @@ import 'package:get/get.dart';
 import '../../../utils/app_content_enum.dart';
 
 class MoreScreen extends GetView<MoreController> {
+  const MoreScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -17,23 +19,23 @@ class MoreScreen extends GetView<MoreController> {
       backgroundColor: Get.theme.backgroundColor,
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.only(left: 20,top: 33, right: 20),
+          margin: const EdgeInsets.only(left: 20, top: 33, right: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // SizedBox(height: 20),
               InkWell(
-                onTap: (){
+                onTap: () {
                   Get.toNamed(AppRoutes.notification);
-                  },
+                },
                 child: Container(
                   // margin: const EdgeInsets.only(top: 30),
                   decoration: CommonFunction.activeBoxDecoration(),
                   child: Padding(
                       padding: const EdgeInsets.all(1.9),
                       child: Container(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                               top: 10, bottom: 10, left: 5, right: 5),
                           decoration: CommonFunction.defaultBoxDecoration(
                               boarderRadius: 10.0),
@@ -52,10 +54,13 @@ class MoreScreen extends GetView<MoreController> {
                               Expanded(
                                   child: Text("notification".tr,
                                       style: TextStyle(
-                                          color: CommonFunction.textThemeColor(),
+                                          color:
+                                              CommonFunction.textThemeColor(),
                                           fontSize: dimen12,
-                                          fontFamily: AppConstants.appFontFamily,
-                                          fontWeight: AppConstants.semiBoldFont))),
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
+                                          fontWeight:
+                                              AppConstants.semiBoldFont))),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(Res.ic_back_right,
@@ -68,9 +73,8 @@ class MoreScreen extends GetView<MoreController> {
                 ),
               ),
               InkWell(
-                onTap: (){
+                onTap: () {
                   Get.toNamed(AppRoutes.theme);
-
                 },
                 child: Container(
                   margin: const EdgeInsets.only(top: 30),
@@ -78,7 +82,7 @@ class MoreScreen extends GetView<MoreController> {
                   child: Padding(
                       padding: const EdgeInsets.all(1.9),
                       child: Container(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                               top: 10, bottom: 10, left: 5, right: 5),
                           decoration: CommonFunction.defaultBoxDecoration(
                               boarderRadius: 10.0),
@@ -97,10 +101,13 @@ class MoreScreen extends GetView<MoreController> {
                               Expanded(
                                   child: Text("theme".tr,
                                       style: TextStyle(
-                                          color: CommonFunction.textThemeColor(),
+                                          color:
+                                              CommonFunction.textThemeColor(),
                                           fontSize: dimen12,
-                                          fontFamily: AppConstants.appFontFamily,
-                                          fontWeight: AppConstants.semiBoldFont))),
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
+                                          fontWeight:
+                                              AppConstants.semiBoldFont))),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(Res.ic_back_right,
@@ -113,17 +120,19 @@ class MoreScreen extends GetView<MoreController> {
                 ),
               ),
               InkWell(
-                onTap: (){
-                  Get.toNamed(AppRoutes.privacyAbout,arguments: AppContentEnum.PrivacyPolicy);
-
+                onTap: () {
+                  Get.toNamed(AppRoutes.privacyAbout,
+                      arguments: AppContentEnum.PrivacyPolicy);
                 },
                 child: Container(
-                  margin: const EdgeInsets.only(top: 30,),
+                  margin: const EdgeInsets.only(
+                    top: 30,
+                  ),
                   decoration: CommonFunction.activeBoxDecoration(),
                   child: Padding(
                       padding: const EdgeInsets.all(1.9),
                       child: Container(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                               top: 10, bottom: 10, left: 5, right: 5),
                           decoration: CommonFunction.defaultBoxDecoration(
                               boarderRadius: 10.0),
@@ -142,10 +151,13 @@ class MoreScreen extends GetView<MoreController> {
                               Expanded(
                                   child: Text("privacy_policy_&_security".tr,
                                       style: TextStyle(
-                                          color: CommonFunction.textThemeColor(),
+                                          color:
+                                              CommonFunction.textThemeColor(),
                                           fontSize: dimen12,
-                                          fontFamily: AppConstants.appFontFamily,
-                                          fontWeight: AppConstants.semiBoldFont))),
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
+                                          fontWeight:
+                                              AppConstants.semiBoldFont))),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(Res.ic_back_right,
@@ -158,9 +170,8 @@ class MoreScreen extends GetView<MoreController> {
                 ),
               ),
               InkWell(
-                onTap: (){
+                onTap: () {
                   Get.toNamed(AppRoutes.helpAndSupport);
-
                 },
                 child: Container(
                   margin: const EdgeInsets.only(top: 30),
@@ -168,7 +179,7 @@ class MoreScreen extends GetView<MoreController> {
                   child: Padding(
                       padding: const EdgeInsets.all(1.9),
                       child: Container(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                               top: 10, bottom: 10, left: 5, right: 5),
                           decoration: CommonFunction.defaultBoxDecoration(
                               boarderRadius: 10.0),
@@ -187,10 +198,13 @@ class MoreScreen extends GetView<MoreController> {
                               Expanded(
                                   child: Text("help_and_support".tr,
                                       style: TextStyle(
-                                          color: CommonFunction.textThemeColor(),
+                                          color:
+                                              CommonFunction.textThemeColor(),
                                           fontSize: dimen12,
-                                          fontFamily: AppConstants.appFontFamily,
-                                          fontWeight: AppConstants.semiBoldFont))),
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
+                                          fontWeight:
+                                              AppConstants.semiBoldFont))),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(Res.ic_back_right,
@@ -203,9 +217,9 @@ class MoreScreen extends GetView<MoreController> {
                 ),
               ),
               InkWell(
-                onTap: (){
-                  Get.toNamed(AppRoutes.privacyAbout,arguments: AppContentEnum.About);
-
+                onTap: () {
+                  Get.toNamed(AppRoutes.privacyAbout,
+                      arguments: AppContentEnum.About);
                 },
                 child: Container(
                   margin: const EdgeInsets.only(top: 30),
@@ -213,7 +227,7 @@ class MoreScreen extends GetView<MoreController> {
                   child: Padding(
                       padding: const EdgeInsets.all(1.9),
                       child: Container(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                               top: 10, bottom: 10, left: 5, right: 5),
                           decoration: CommonFunction.defaultBoxDecoration(
                               boarderRadius: 10.0),
@@ -232,10 +246,13 @@ class MoreScreen extends GetView<MoreController> {
                               Expanded(
                                   child: Text("about".tr,
                                       style: TextStyle(
-                                          color: CommonFunction.textThemeColor(),
+                                          color:
+                                              CommonFunction.textThemeColor(),
                                           fontSize: dimen12,
-                                          fontFamily: AppConstants.appFontFamily,
-                                          fontWeight: AppConstants.semiBoldFont))),
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
+                                          fontWeight:
+                                              AppConstants.semiBoldFont))),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(Res.ic_back_right,

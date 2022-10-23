@@ -1,10 +1,12 @@
+// ignore_for_file: no_logic_in_create_state
+
 import 'package:fantasy_gaming/utils/common_function.dart';
 import 'package:fantasy_gaming/utils/res.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
+// ignore: constant_identifier_names
 enum ProgressDialogType { Normal, Download }
 
 bool _isShowing = false;
@@ -59,7 +61,7 @@ class ProgressDialog {
             child: Dialog(
                 backgroundColor: _backgroundColor,
                 insetAnimationCurve: _insetAnimCurve,
-                insetAnimationDuration: Duration(milliseconds: 100),
+                insetAnimationDuration: const Duration(milliseconds: 100),
                 elevation: 0,
                 shape: RoundedRectangleBorder(
                     borderRadius:
@@ -77,7 +79,7 @@ class ProgressDialog {
 
 // ignore: must_be_immutable
 class _Body extends StatefulWidget {
-  _BodyState _dialog = _BodyState();
+  final _BodyState _dialog = _BodyState();
 
   @override
   State<StatefulWidget> createState() {

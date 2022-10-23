@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 const en_US = {
   "register": "Register",
   "enter_email": " Enter email",
@@ -78,7 +80,8 @@ const en_US = {
   "current_password": "Current Password",
   "about_fanWelt_app": "About FanWelt App",
   "choose_your_default_app_mode": "Choose Your default app Mode",
-  "demo_discribe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est sem proin amet eros. Ultricies consectetur vitae non eros nec maecenas. Ultricies odio tincidunt consequat nisi. Amet aliquet amet sem pellentesque volutpat ipsum. Amet varius risus in sodales sed pulvinar. Faucibus phasellus consectetur aliquam gravida dictumst. Ut nulla eu vel enim. Porttitor est sed euismod morbi. Hendrerit viverra magna arcu metus.",
+  "demo_discribe":
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est sem proin amet eros. Ultricies consectetur vitae non eros nec maecenas. Ultricies odio tincidunt consequat nisi. Amet aliquet amet sem pellentesque volutpat ipsum. Amet varius risus in sodales sed pulvinar. Faucibus phasellus consectetur aliquam gravida dictumst. Ut nulla eu vel enim. Porttitor est sed euismod morbi. Hendrerit viverra magna arcu metus.",
   //home
   "my_matches": "My Matches",
   "upcoming": "Upcoming",
@@ -88,11 +91,12 @@ const en_US = {
   "tournament_matches": "Tournament Matches",
   "view_all": "View All",
   //reset password otp
-  "code_to_reset_your_password": "A code to reset your password has been sent to",
-  "didn't_receive_code?":  "Didn't receive code?",
+  "code_to_reset_your_password":
+      "A code to reset your password has been sent to",
+  "didn't_receive_code?": "Didn't receive code?",
   "enter_room_key": "Enter Room Key",
   //new pass
-  "next" : "Next",
+  "next": "Next",
   //create room
   "create_room": "Create Room",
   //dummy

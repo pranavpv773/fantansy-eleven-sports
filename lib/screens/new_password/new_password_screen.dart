@@ -10,6 +10,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class NewPasswordScreen extends GetView<NewPasswordController> {
+  const NewPasswordScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -41,11 +43,14 @@ class NewPasswordScreen extends GetView<NewPasswordController> {
               Obx(
                 () => Container(
                   margin: const EdgeInsets.only(top: 30),
-                  decoration: controller.newPasswordText.isNotEmpty ? CommonFunction.activeBoxDecoration() : CommonFunction.inactiveBoxDecoration(),
+                  decoration: controller.newPasswordText.isNotEmpty
+                      ? CommonFunction.activeBoxDecoration()
+                      : CommonFunction.inactiveBoxDecoration(),
                   child: Padding(
                       padding: const EdgeInsets.all(1.9),
                       child: Container(
-                          decoration: CommonFunction.defaultBoxDecoration(boarderRadius: 12.0),
+                          decoration: CommonFunction.defaultBoxDecoration(
+                              boarderRadius: 12.0),
                           child: Row(
                             children: [
                               SizedBox(
@@ -55,7 +60,9 @@ class NewPasswordScreen extends GetView<NewPasswordController> {
                                 Res.ic_lock,
                                 width: dimen20,
                                 height: dimen20,
-                                color: controller.newPasswordText.isNotEmpty ? CommonFunction.textThemeColor() : Get.theme.hintColor,
+                                color: controller.newPasswordText.isNotEmpty
+                                    ? CommonFunction.textThemeColor()
+                                    : Get.theme.hintColor,
                               ),
                               SizedBox(
                                 width: dimen16,
@@ -71,14 +78,19 @@ class NewPasswordScreen extends GetView<NewPasswordController> {
                                     decoration: InputDecoration(
                                         hintText: 'new_password'.tr,
                                         border: InputBorder.none,
-                                        hintStyle: TextStyle(fontSize: dimen12, fontFamily: AppConstants.appFontFamily, color: AppColors.hintColor)),
+                                        hintStyle: TextStyle(
+                                            fontSize: dimen12,
+                                            fontFamily:
+                                                AppConstants.appFontFamily,
+                                            color: AppColors.hintColor)),
                                     onChanged: (String text) {
                                       controller.onChangedPassword(text);
                                     }),
                               ),
                               InkWell(
                                   onTap: () {
-                                    controller.seePassword.value = !controller.seePassword.value;
+                                    controller.seePassword.value =
+                                        !controller.seePassword.value;
                                   },
                                   child: controller.seePassword.value
                                       ? Padding(
@@ -109,25 +121,34 @@ class NewPasswordScreen extends GetView<NewPasswordController> {
                   margin: const EdgeInsets.only(
                     top: 30,
                   ),
-                  decoration: controller.conformPasswordText.isNotEmpty ? CommonFunction.activeBoxDecoration() : CommonFunction.inactiveBoxDecoration(),
+                  decoration: controller.conformPasswordText.isNotEmpty
+                      ? CommonFunction.activeBoxDecoration()
+                      : CommonFunction.inactiveBoxDecoration(),
                   child: Padding(
                       padding: const EdgeInsets.all(1.9),
                       child: Container(
-                          decoration: CommonFunction.defaultBoxDecoration(boarderRadius: 12.0),
+                          decoration: CommonFunction.defaultBoxDecoration(
+                              boarderRadius: 12.0),
                           child: Row(
                             children: [
                               SizedBox(
                                 width: dimen16,
                               ),
                               Image.asset(Res.ic_lock,
-                                  width: dimen20, height: dimen20, color: controller.conformPasswordText.isNotEmpty ? CommonFunction.textThemeColor() : Get.theme.hintColor),
+                                  width: dimen20,
+                                  height: dimen20,
+                                  color:
+                                      controller.conformPasswordText.isNotEmpty
+                                          ? CommonFunction.textThemeColor()
+                                          : Get.theme.hintColor),
                               SizedBox(
                                 width: dimen16,
                               ),
                               Expanded(
                                 child: TextField(
                                     keyboardType: TextInputType.visiblePassword,
-                                    obscureText: controller.seenConformPassword.value,
+                                    obscureText:
+                                        controller.seenConformPassword.value,
                                     textInputAction: TextInputAction.next,
                                     inputFormatters: [
                                       LengthLimitingTextInputFormatter(6),
@@ -135,14 +156,19 @@ class NewPasswordScreen extends GetView<NewPasswordController> {
                                     decoration: InputDecoration(
                                         hintText: 'confirm_password'.tr,
                                         border: InputBorder.none,
-                                        hintStyle: TextStyle(fontSize: dimen12, fontFamily: AppConstants.appFontFamily, color: AppColors.hintColor)),
+                                        hintStyle: TextStyle(
+                                            fontSize: dimen12,
+                                            fontFamily:
+                                                AppConstants.appFontFamily,
+                                            color: AppColors.hintColor)),
                                     onChanged: (String text) {
                                       controller.onConfirmPassword(text);
                                     }),
                               ),
                               InkWell(
                                 onTap: () {
-                                  controller.seenConformPassword.value = !controller.seenConformPassword.value;
+                                  controller.seenConformPassword.value =
+                                      !controller.seenConformPassword.value;
                                 },
                                 child: controller.seenConformPassword.value
                                     ? Padding(

@@ -1,3 +1,5 @@
+// ignore_for_file: library_prefixes
+
 import 'dart:async';
 
 import 'package:fantasy_gaming/utils/app_constants.dart';

@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TournamentMatchScreen extends GetView<TournamentMatchController> {
+  const TournamentMatchScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -52,14 +54,17 @@ class TournamentMatchScreen extends GetView<TournamentMatchController> {
                                     width: 10,
                                   ),
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
                                         'Indian Premier League',
                                         style: TextStyle(
                                           color: AppColors.whiteColor,
-                                          fontFamily: AppConstants.appFontFamily,
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
                                           fontWeight: AppConstants.semiBoldFont,
                                         ),
                                       ),
@@ -70,7 +75,8 @@ class TournamentMatchScreen extends GetView<TournamentMatchController> {
                                         '54 Matches',
                                         style: TextStyle(
                                           color: AppColors.whiteColor,
-                                          fontFamily: AppConstants.appFontFamily,
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
                                           fontWeight: AppConstants.regularFont,
                                         ),
                                       )
@@ -110,18 +116,22 @@ class TournamentMatchScreen extends GetView<TournamentMatchController> {
                             padding: const EdgeInsets.all(1.9),
                             child: Container(
                               padding: const EdgeInsets.all(15),
-                              decoration: CommonFunction.unSelectedCardDecoration(),
+                              decoration:
+                                  CommonFunction.unSelectedCardDecoration(),
                               child: Column(
                                 children: [
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
                                         'Match #2',
                                         style: TextStyle(
-                                          color: CommonFunction.textThemeColor(),
+                                          color:
+                                              CommonFunction.textThemeColor(),
                                           fontSize: dimen11,
-                                          fontFamily: AppConstants.appFontFamily,
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
                                           fontWeight: AppConstants.semiBoldFont,
                                         ),
                                       ),
@@ -141,25 +151,34 @@ class TournamentMatchScreen extends GetView<TournamentMatchController> {
                                     ),
                                   ),
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             'Rajasthan Royals',
                                             style: TextStyle(
-                                              color: CommonFunction.textThemeColor(),
+                                              color: CommonFunction
+                                                  .textThemeColor(),
                                               fontSize: dimen10,
-                                              fontFamily: AppConstants.appFontFamily,
-                                              fontWeight: AppConstants.regularFont,
+                                              fontFamily:
+                                                  AppConstants.appFontFamily,
+                                              fontWeight:
+                                                  AppConstants.regularFont,
                                             ),
                                           ),
                                           Wrap(
-                                            crossAxisAlignment: WrapCrossAlignment.center,
+                                            crossAxisAlignment:
+                                                WrapCrossAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsets.only(top: 10, bottom: 10, right: 10),
+                                                padding: const EdgeInsets.only(
+                                                    top: 10,
+                                                    bottom: 10,
+                                                    right: 10),
                                                 child: Image.asset(
                                                   Res.ic_mi_logo,
                                                   width: 40,
@@ -170,9 +189,12 @@ class TournamentMatchScreen extends GetView<TournamentMatchController> {
                                               Text(
                                                 'RR',
                                                 style: TextStyle(
-                                                  color: CommonFunction.textThemeColor(),
-                                                  fontFamily: AppConstants.appFontFamily,
-                                                  fontWeight: AppConstants.semiBoldFont,
+                                                  color: CommonFunction
+                                                      .textThemeColor(),
+                                                  fontFamily: AppConstants
+                                                      .appFontFamily,
+                                                  fontWeight:
+                                                      AppConstants.semiBoldFont,
                                                 ),
                                               ),
                                             ],
@@ -182,37 +204,50 @@ class TournamentMatchScreen extends GetView<TournamentMatchController> {
                                       Text(
                                         '7 hrs',
                                         style: TextStyle(
-                                          color: CommonFunction.textThemeColor(),
+                                          color:
+                                              CommonFunction.textThemeColor(),
                                           fontSize: dimen11,
-                                          fontFamily: AppConstants.appFontFamily,
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
                                           fontWeight: AppConstants.semiBoldFont,
                                         ),
                                       ),
                                       Column(
-                                        crossAxisAlignment: CrossAxisAlignment.end,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
                                         children: [
                                           Text(
                                             'Chennai Super Kings',
                                             style: TextStyle(
-                                              color: CommonFunction.textThemeColor(),
+                                              color: CommonFunction
+                                                  .textThemeColor(),
                                               fontSize: dimen10,
-                                              fontFamily: AppConstants.appFontFamily,
-                                              fontWeight: AppConstants.regularFont,
+                                              fontFamily:
+                                                  AppConstants.appFontFamily,
+                                              fontWeight:
+                                                  AppConstants.regularFont,
                                             ),
                                           ),
                                           Wrap(
-                                            crossAxisAlignment: WrapCrossAlignment.center,
+                                            crossAxisAlignment:
+                                                WrapCrossAlignment.center,
                                             children: [
                                               Text(
                                                 'CSK',
                                                 style: TextStyle(
-                                                  color: CommonFunction.textThemeColor(),
-                                                  fontFamily: AppConstants.appFontFamily,
-                                                  fontWeight: AppConstants.semiBoldFont,
+                                                  color: CommonFunction
+                                                      .textThemeColor(),
+                                                  fontFamily: AppConstants
+                                                      .appFontFamily,
+                                                  fontWeight:
+                                                      AppConstants.semiBoldFont,
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsets.only(top: 10, bottom: 10, left: 10),
+                                                padding: const EdgeInsets.only(
+                                                    top: 10,
+                                                    bottom: 10,
+                                                    left: 10),
                                                 child: Image.asset(
                                                   Res.ic_dc_logo,
                                                   width: 40,
@@ -227,56 +262,70 @@ class TournamentMatchScreen extends GetView<TournamentMatchController> {
                                     ],
                                   ),
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Wrap(
-                                        crossAxisAlignment: WrapCrossAlignment.center,
+                                        crossAxisAlignment:
+                                            WrapCrossAlignment.center,
                                         spacing: 8,
                                         children: [
                                           Container(
                                             decoration: BoxDecoration(
-                                              gradient: CommonFunction.themeGradient,
-                                              borderRadius: BorderRadius.circular(30),
+                                              gradient:
+                                                  CommonFunction.themeGradient,
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
                                             ),
-                                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 10, vertical: 5),
                                             child: Text(
                                               'PRICE',
                                               style: TextStyle(
                                                 color: AppColors.whiteColor,
                                                 fontSize: dimen8,
-                                                fontFamily: AppConstants.appFontFamily,
-                                                fontWeight: AppConstants.semiBoldFont,
+                                                fontFamily:
+                                                    AppConstants.appFontFamily,
+                                                fontWeight:
+                                                    AppConstants.semiBoldFont,
                                               ),
                                             ),
                                           ),
                                           Text(
                                             '10 Crore',
                                             style: TextStyle(
-                                              color: CommonFunction.textThemeColor(),
+                                              color: CommonFunction
+                                                  .textThemeColor(),
                                               fontSize: dimen10,
-                                              fontFamily: AppConstants.appFontFamily,
+                                              fontFamily:
+                                                  AppConstants.appFontFamily,
                                             ),
                                           ),
                                         ],
                                       ),
                                       Wrap(
-                                        crossAxisAlignment: WrapCrossAlignment.center,
+                                        crossAxisAlignment:
+                                            WrapCrossAlignment.center,
                                         spacing: 5,
                                         children: [
                                           Text(
                                             '4:1',
                                             style: TextStyle(
-                                              color: CommonFunction.textThemeColor(),
+                                              color: CommonFunction
+                                                  .textThemeColor(),
                                               fontSize: dimen10,
-                                              fontFamily: AppConstants.appFontFamily,
+                                              fontFamily:
+                                                  AppConstants.appFontFamily,
                                             ),
                                           ),
                                           Text(
                                             'WD',
                                             style: TextStyle(
-                                              color: CommonFunction.textThemeColor(),
+                                              color: CommonFunction
+                                                  .textThemeColor(),
                                               fontSize: dimen10,
-                                              fontFamily: AppConstants.appFontFamily,
+                                              fontFamily:
+                                                  AppConstants.appFontFamily,
                                             ),
                                           ),
                                         ],

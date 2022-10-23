@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ChangeUsernameScreen extends GetView<ChangeUsernameController> {
+  const ChangeUsernameScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -84,6 +86,7 @@ class ChangeUsernameScreen extends GetView<ChangeUsernameController> {
                             ))),
                   )),
               Obx(() => controller.sameName.value
+                  // ignore: avoid_unnecessary_containers
                   ? Container(
                       child: Text('username_validation'.tr,
                           style: TextStyle(

@@ -11,6 +11,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class MyInfoScreen extends GetView<MyInfoController> {
+  const MyInfoScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -50,16 +52,79 @@ class MyInfoScreen extends GetView<MyInfoController> {
                     ],
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Text("name".tr,
                     style: TextStyle(
-                        color: AppColors.blackColor,
-                        fontSize: dimen14,
-                        fontFamily: AppConstants.appFontFamily,
-                        )),
-
-
-                      Container(
+                      color: AppColors.blackColor,
+                      fontSize: dimen14,
+                      fontFamily: AppConstants.appFontFamily,
+                    )),
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 10,
+                  ),
+                  decoration: CommonFunction.inactiveBoxDecoration(),
+                  child: Padding(
+                      padding: const EdgeInsets.all(1.9),
+                      child: Container(
+                          decoration: CommonFunction.defaultBoxDecoration(
+                              boarderRadius: 12.0),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: dimen16,
+                              ),
+                              Image.asset(Res.ic_user_edit,
+                                  width: dimen18,
+                                  height: dimen18,
+                                  color: CommonFunction.textThemeColor()),
+                              SizedBox(
+                                width: dimen16,
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  keyboardType: TextInputType.name,
+                                  textInputAction: TextInputAction.next,
+                                  controller: controller.nameController,
+                                  readOnly: true,
+                                  decoration: InputDecoration(
+                                      hintText: 'enter_name'.tr,
+                                      border: InputBorder.none,
+                                      hintStyle: TextStyle(
+                                          fontSize: dimen12,
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
+                                          color: AppColors.hintColor)),
+                                ),
+                              ),
+                              Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    "Level 5",
+                                    style: TextStyle(
+                                        fontSize: dimen12,
+                                        fontFamily: AppConstants.appFontFamily,
+                                        color: AppColors.hintColor),
+                                  )),
+                              SizedBox(
+                                width: dimen10,
+                              ),
+                            ],
+                          ))),
+                ),
+                const SizedBox(height: 30),
+                Text("username".tr,
+                    style: TextStyle(
+                      color: AppColors.blackColor,
+                      fontSize: dimen14,
+                      fontFamily: AppConstants.appFontFamily,
+                    )),
+                InkWell(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.changeUsername,
+                        arguments: controller.userNameController.text);
+                  },
+                  child: Container(
                     margin: const EdgeInsets.only(
                       top: 10,
                     ),
@@ -85,10 +150,10 @@ class MyInfoScreen extends GetView<MyInfoController> {
                                   child: TextField(
                                     keyboardType: TextInputType.name,
                                     textInputAction: TextInputAction.next,
-                                    controller: controller.nameController,
+                                    controller: controller.userNameController,
                                     readOnly: true,
                                     decoration: InputDecoration(
-                                        hintText: 'enter_name'.tr,
+                                        hintText: 'enter_username'.tr,
                                         border: InputBorder.none,
                                         hintStyle: TextStyle(
                                             fontSize: dimen12,
@@ -98,246 +163,173 @@ class MyInfoScreen extends GetView<MyInfoController> {
                                   ),
                                 ),
                                 Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      "Level 5",
-                                      style: TextStyle(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Image.asset(
+                                    Res.ic_edit,
+                                    width: dimen18,
+                                    height: dimen18,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: dimen10,
+                                ),
+                              ],
+                            ))),
+                  ),
+                ),
+                const SizedBox(height: 30),
+                Text("email".tr,
+                    style: TextStyle(
+                      color: AppColors.blackColor,
+                      fontSize: dimen14,
+                      fontFamily: AppConstants.appFontFamily,
+                    )),
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 10,
+                  ),
+                  decoration: CommonFunction.inactiveBoxDecoration(),
+                  child: Padding(
+                      padding: const EdgeInsets.all(1.9),
+                      child: Container(
+                          decoration: CommonFunction.defaultBoxDecoration(
+                              boarderRadius: 12.0),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: dimen16,
+                              ),
+                              Image.asset(Res.ic_email,
+                                  width: dimen18,
+                                  height: dimen18,
+                                  color: CommonFunction.textThemeColor()),
+                              SizedBox(
+                                width: dimen16,
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  keyboardType: TextInputType.name,
+                                  textInputAction: TextInputAction.next,
+                                  controller: controller.emailNameController,
+                                  readOnly: true,
+                                  decoration: InputDecoration(
+                                      hintText: 'enter_email'.tr,
+                                      border: InputBorder.none,
+                                      hintStyle: TextStyle(
                                           fontSize: dimen12,
                                           fontFamily:
                                               AppConstants.appFontFamily,
-                                          color: AppColors.hintColor),
-                                    )),
-                                SizedBox(
-                                  width: dimen10,
+                                          color: AppColors.hintColor)),
                                 ),
-                              ],
-                            ))),
-                  ),
-                SizedBox(height: 30),
-                Text("username".tr,
-                    style: TextStyle(
-                        color: AppColors.blackColor,
-                        fontSize: dimen14,
-                        fontFamily: AppConstants.appFontFamily,
-                        )),
-
-                      InkWell(
-                    onTap: () {
-                      Get.toNamed(AppRoutes.changeUsername,arguments:controller.userNameController.text);
-                    },
-                    child: Container(
-                      margin: const EdgeInsets.only(
-                        top: 10,
-                      ),
-                      decoration: CommonFunction.inactiveBoxDecoration(),
-                      child: Padding(
-                          padding: const EdgeInsets.all(1.9),
-                          child: Container(
-                              decoration: CommonFunction.defaultBoxDecoration(
-                                  boarderRadius: 12.0),
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: dimen16,
-                                  ),
-                                  Image.asset(Res.ic_user_edit,
-                                      width: dimen18,
-                                      height: dimen18,
-                                      color: CommonFunction.textThemeColor()),
-                                  SizedBox(
-                                    width: dimen16,
-                                  ),
-                                  Expanded(
-                                    child: TextField(
-                                      keyboardType: TextInputType.name,
-                                      textInputAction: TextInputAction.next,
-                                      controller: controller.userNameController,
-                                      readOnly: true,
-                                      decoration: InputDecoration(
-                                          hintText: 'enter_username'.tr,
-                                          border: InputBorder.none,
-                                          hintStyle: TextStyle(
-                                              fontSize: dimen12,
-                                              fontFamily:
-                                                  AppConstants.appFontFamily,
-                                              color: AppColors.hintColor)),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset(
-                                      Res.ic_edit,
-                                      width: dimen18,
-                                      height: dimen18,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: dimen10,
-                                  ),
-                                ],
-                              ))),
-                    ),
-                  ),
-
-
-
-
-                SizedBox(height: 30),
-                Text("email".tr,
-                    style: TextStyle(
-                        color: AppColors.blackColor,
-                        fontSize: dimen14,
-                        fontFamily: AppConstants.appFontFamily,
-                        )),
-
-                      Container(
-                    margin: const EdgeInsets.only(
-                      top: 10,
-                    ),
-                    decoration: CommonFunction.inactiveBoxDecoration(),
-                    child: Padding(
-                        padding: const EdgeInsets.all(1.9),
-                        child: Container(
-                            decoration: CommonFunction.defaultBoxDecoration(
-                                boarderRadius: 12.0),
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: dimen16,
-                                ),
-                                Image.asset(Res.ic_email,
-                                    width: dimen18,
-                                    height: dimen18,
-                                    color: CommonFunction.textThemeColor()),
-                                SizedBox(
-                                  width: dimen16,
-                                ),
-                                Expanded(
-                                  child: TextField(
-                                    keyboardType: TextInputType.name,
-                                    textInputAction: TextInputAction.next,
-                                    controller: controller.emailNameController,
-                                    readOnly: true,
-                                    decoration: InputDecoration(
-                                        hintText: 'enter_email'.tr,
-                                        border: InputBorder.none,
-                                        hintStyle: TextStyle(
-                                            fontSize: dimen12,
-                                            fontFamily:
-                                                AppConstants.appFontFamily,
-                                            color: AppColors.hintColor)),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: dimen10,
-                                ),
-                              ],
-                            ))),
-                  ),
-                SizedBox(height: 30),
+                              ),
+                              SizedBox(
+                                width: dimen10,
+                              ),
+                            ],
+                          ))),
+                ),
+                const SizedBox(height: 30),
                 Text("mobile_number".tr,
                     style: TextStyle(
-                        color: AppColors.blackColor,
-                        fontSize: dimen14,
-                        fontFamily: AppConstants.appFontFamily,
-                        )),
-                   Container(
-                    margin: const EdgeInsets.only(
-                      top: 10,
-                    ),
-                    decoration: CommonFunction.inactiveBoxDecoration(),
-                    child: Padding(
-                        padding: const EdgeInsets.all(1.9),
-                        child: Container(
-                            decoration: CommonFunction.defaultBoxDecoration(
-                                boarderRadius: 12.0),
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: dimen16,
-                                ),
-                                Image.asset(Res.ic_phone,
-                                    width: dimen12,
-                                    height: dimen12,
-                                    color: CommonFunction.textThemeColor()),
-                                SizedBox(
-                                  width: dimen16,
-                                ),
-                                Expanded(
-                                  child: TextField(
-                                    keyboardType: TextInputType.name,
-                                    textInputAction: TextInputAction.next,
-                                    controller: controller.mobileNumberController,
-                                    readOnly: true,
-                                    decoration: InputDecoration(
-                                        hintText: 'enter_mobile'.tr,
-                                        border: InputBorder.none,
-                                        hintStyle: TextStyle(
-                                            fontSize: dimen12,
-                                            fontFamily:
-                                                AppConstants.appFontFamily,
-                                            color: AppColors.hintColor)),
-                                  ),
-                                ),
-                              ],
-                            ))),
+                      color: AppColors.blackColor,
+                      fontSize: dimen14,
+                      fontFamily: AppConstants.appFontFamily,
+                    )),
+                Container(
+                  margin: const EdgeInsets.only(
+                    top: 10,
                   ),
-
-                SizedBox(height: 30),
+                  decoration: CommonFunction.inactiveBoxDecoration(),
+                  child: Padding(
+                      padding: const EdgeInsets.all(1.9),
+                      child: Container(
+                          decoration: CommonFunction.defaultBoxDecoration(
+                              boarderRadius: 12.0),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: dimen16,
+                              ),
+                              Image.asset(Res.ic_phone,
+                                  width: dimen12,
+                                  height: dimen12,
+                                  color: CommonFunction.textThemeColor()),
+                              SizedBox(
+                                width: dimen16,
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  keyboardType: TextInputType.name,
+                                  textInputAction: TextInputAction.next,
+                                  controller: controller.mobileNumberController,
+                                  readOnly: true,
+                                  decoration: InputDecoration(
+                                      hintText: 'enter_mobile'.tr,
+                                      border: InputBorder.none,
+                                      hintStyle: TextStyle(
+                                          fontSize: dimen12,
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
+                                          color: AppColors.hintColor)),
+                                ),
+                              ),
+                            ],
+                          ))),
+                ),
+                const SizedBox(height: 30),
                 Text("password".tr,
                     style: TextStyle(
-                        color: AppColors.blackColor,
-                        fontSize: dimen14,
-                        fontFamily: AppConstants.appFontFamily,
-                        )),
-
-                      Container(
-                    margin: const EdgeInsets.only(top: 10),
-                    decoration: CommonFunction.inactiveBoxDecoration(),
-                    child: Padding(
-                        padding: const EdgeInsets.all(1.9),
-                        child: Container(
-                            decoration: CommonFunction.defaultBoxDecoration(
-                                boarderRadius: 12.0),
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: dimen16,
+                      color: AppColors.blackColor,
+                      fontSize: dimen14,
+                      fontFamily: AppConstants.appFontFamily,
+                    )),
+                Container(
+                  margin: const EdgeInsets.only(top: 10),
+                  decoration: CommonFunction.inactiveBoxDecoration(),
+                  child: Padding(
+                      padding: const EdgeInsets.all(1.9),
+                      child: Container(
+                          decoration: CommonFunction.defaultBoxDecoration(
+                              boarderRadius: 12.0),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: dimen16,
+                              ),
+                              Image.asset(Res.ic_lock,
+                                  width: dimen20,
+                                  height: dimen20,
+                                  color: CommonFunction.textThemeColor()),
+                              SizedBox(
+                                width: dimen16,
+                              ),
+                              Expanded(
+                                child: TextField(
+                                  readOnly: true,
+                                  keyboardType: TextInputType.visiblePassword,
+                                  textInputAction: TextInputAction.next,
+                                  obscureText: controller.seePassword.value,
+                                  controller: controller.passwordController,
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(6),
+                                  ],
+                                  decoration: InputDecoration(
+                                      hintText: 'password'.tr,
+                                      border: InputBorder.none,
+                                      hintStyle: TextStyle(
+                                          fontSize: dimen12,
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
+                                          color: AppColors.hintColor)),
                                 ),
-                                Image.asset(Res.ic_lock,
-                                    width: dimen20,
-                                    height: dimen20,
-                                    color: CommonFunction.textThemeColor()),
-                                SizedBox(
-                                  width: dimen16,
-                                ),
-                                Expanded(
-                                  child: TextField(
-                                    readOnly: true,
-                                    keyboardType: TextInputType.visiblePassword,
-                                    textInputAction: TextInputAction.next,
-                                    obscureText: controller.seePassword.value,
-                                    controller: controller.passwordController,
-                                    inputFormatters: [
-                                      LengthLimitingTextInputFormatter(6),
-                                    ],
-                                    decoration: InputDecoration(
-                                        hintText: 'password'.tr,
-                                        border: InputBorder.none,
-                                        hintStyle: TextStyle(
-                                            fontSize: dimen12,
-                                            fontFamily:
-                                                AppConstants.appFontFamily,
-                                            color: AppColors.hintColor)),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: dimen10,
-                                ),
-                              ],
-                            ))),
-                  ),
-                SizedBox(height: 20),
+                              ),
+                              SizedBox(
+                                width: dimen10,
+                              ),
+                            ],
+                          ))),
+                ),
+                const SizedBox(height: 20),
                 Container(
                     height: dimen42,
                     margin: const EdgeInsets.only(top: 50, bottom: 30),

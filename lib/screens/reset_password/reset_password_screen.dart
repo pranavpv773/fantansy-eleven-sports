@@ -4,9 +4,7 @@ import 'package:fantasy_gaming/utils/res.dart';
 import 'package:fantasy_gaming/utils/routes/app_routes.dart';
 import 'package:fantasy_gaming/utils/screen_header.dart';
 import 'package:fantasy_gaming/utils/theme/app_colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 import '../../utils/dimens.dart';
@@ -14,9 +12,7 @@ import 'reset_password_controller.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class ResetPasswordScreen extends GetView<ResetPasswordController> {
-  /*static TextEditingController textEditingController = TextEditingController();
-  String currentText = "";*/
-
+  const ResetPasswordScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -56,7 +52,10 @@ class ResetPasswordScreen extends GetView<ResetPasswordController> {
                   child: Center(
                       child: Text(
                     "code_to_reset_your_password".tr,
-                    style: TextStyle(fontSize: dimen10, fontFamily: AppConstants.appFontFamily, color: AppColors.hintColor),
+                    style: TextStyle(
+                        fontSize: dimen10,
+                        fontFamily: AppConstants.appFontFamily,
+                        color: AppColors.hintColor),
                   )),
                 ),
                 Padding(
@@ -64,7 +63,11 @@ class ResetPasswordScreen extends GetView<ResetPasswordController> {
                   child: Center(
                       child: Text(
                     "demo_email".tr,
-                    style: TextStyle(color: AppColors.blackColor, fontSize: dimen13, fontFamily: AppConstants.appFontFamily, fontWeight: AppConstants.mediumFont),
+                    style: TextStyle(
+                        color: AppColors.blackColor,
+                        fontSize: dimen13,
+                        fontFamily: AppConstants.appFontFamily,
+                        fontWeight: AppConstants.mediumFont),
                   )),
                 ),
                 const SizedBox(
@@ -83,7 +86,7 @@ class ResetPasswordScreen extends GetView<ResetPasswordController> {
                     ),
                     Container(
                       width: 200,
-                      padding: EdgeInsets.symmetric(vertical: 20),
+                      padding: const EdgeInsets.symmetric(vertical: 20),
                       child: PinCodeTextField(
                         length: 4,
                         obscureText: true,
@@ -92,7 +95,7 @@ class ResetPasswordScreen extends GetView<ResetPasswordController> {
                           size: dimen8,
                         ),
                         animationType: AnimationType.fade,
-                        keyboardType: TextInputType.numberWithOptions(),
+                        keyboardType: const TextInputType.numberWithOptions(),
                         pinTheme: PinTheme(
                           selectedColor: AppColors.blackColor,
                           activeColor: AppColors.gradientColor,
@@ -118,7 +121,6 @@ class ResetPasswordScreen extends GetView<ResetPasswordController> {
                           Get.offNamed(AppRoutes.newPassword);
                         },
                         onChanged: (value) {
-                          print(value);
                           /*setState(() {
                             currentText = value;
                           });*/
@@ -131,13 +133,15 @@ class ResetPasswordScreen extends GetView<ResetPasswordController> {
                     ),
                   ],
                 ),
-
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
                   child: Center(
                       child: Text(
                     "didn't_receive_code?".tr,
-                    style: TextStyle(fontSize: dimen10, fontFamily: AppConstants.appFontFamily, color: AppColors.hintColor),
+                    style: TextStyle(
+                        fontSize: dimen10,
+                        fontFamily: AppConstants.appFontFamily,
+                        color: AppColors.hintColor),
                   )),
                 ),
                 InkWell(
@@ -158,8 +162,6 @@ class ResetPasswordScreen extends GetView<ResetPasswordController> {
                     )),
                   ),
                 ),
-
-
                 const SizedBox(
                   height: 80,
                 ),
@@ -168,7 +170,10 @@ class ResetPasswordScreen extends GetView<ResetPasswordController> {
                   child: Center(
                       child: Text(
                     "resend_demo".tr,
-                    style: TextStyle(fontSize: dimen10, fontFamily: AppConstants.appFontFamily, color: AppColors.hintColor),
+                    style: TextStyle(
+                        fontSize: dimen10,
+                        fontFamily: AppConstants.appFontFamily,
+                        color: AppColors.hintColor),
                   )),
                 ),
                 Row(
@@ -180,7 +185,10 @@ class ResetPasswordScreen extends GetView<ResetPasswordController> {
                       child: Center(
                           child: Text(
                         "still_no_email".tr,
-                        style: TextStyle(fontSize: dimen10, fontFamily: AppConstants.appFontFamily, color: AppColors.hintColor),
+                        style: TextStyle(
+                            fontSize: dimen10,
+                            fontFamily: AppConstants.appFontFamily,
+                            color: AppColors.hintColor),
                       )),
                     ),
                     InkWell(

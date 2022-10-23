@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 import 'help_support_controller.dart';
 
 class HelpSupportScreen extends GetView<HelpSupportController> {
+  const HelpSupportScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -71,7 +73,9 @@ class HelpSupportScreen extends GetView<HelpSupportController> {
               );
             },
             separatorBuilder: (BuildContext context, int index) {
-              return Divider(color: CommonFunction.textThemeColor(),);
+              return Divider(
+                color: CommonFunction.textThemeColor(),
+              );
             },
           ),
         ));

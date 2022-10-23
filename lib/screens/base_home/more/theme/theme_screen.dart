@@ -9,6 +9,8 @@ import 'package:get/get.dart';
 import 'theme_controller.dart';
 
 class ThemeScreen extends GetView<ThemeController> {
+  const ThemeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -22,7 +24,8 @@ class ThemeScreen extends GetView<ThemeController> {
         body: SingleChildScrollView(
             child: Container(
           margin: const EdgeInsets.only(left: 20, right: 20),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.only(top: 10, bottom: 10),
@@ -68,7 +71,7 @@ class ThemeScreen extends GetView<ThemeController> {
             ),
             const SizedBox(height: 10),
             Padding(
-              padding: EdgeInsets.only(top: 10, bottom: 10),
+              padding: const EdgeInsets.only(top: 10, bottom: 10),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

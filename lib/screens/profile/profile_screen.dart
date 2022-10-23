@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:fantasy_gaming/utils/app_constants.dart';
 import 'package:fantasy_gaming/utils/common_function.dart';
 import 'package:fantasy_gaming/utils/dimens.dart';
@@ -12,6 +14,8 @@ import 'package:timeline_tile/timeline_tile.dart';
 import 'profile_controller.dart';
 
 class ProfileScreen extends GetView<ProfileController> {
+  const ProfileScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -27,9 +31,8 @@ class ProfileScreen extends GetView<ProfileController> {
             children: [
               const SizedBox(height: 20),
               Padding(
-                padding: const EdgeInsets.only(left: 40,right: 40),
-                child: Stack(
-                    children: [
+                padding: const EdgeInsets.only(left: 40, right: 40),
+                child: Stack(children: [
                   Container(
                     margin: const EdgeInsets.only(top: 30),
                     height: 220,
@@ -43,28 +46,27 @@ class ProfileScreen extends GetView<ProfileController> {
                         ),
                         Text("demo_name".tr,
                             style: TextStyle(
-                                color: AppColors.whiteColor,
-                                fontSize: dimen14,
-                                fontFamily: AppConstants.appFontFamily,
-                                )),
+                              color: AppColors.whiteColor,
+                              fontSize: dimen14,
+                              fontFamily: AppConstants.appFontFamily,
+                            )),
                         SizedBox(
                           height: dimen10,
                         ),
                         Text("Level 38",
                             style: TextStyle(
-                                color: AppColors.whiteColor,
-                                fontSize: dimen14,
-                                fontFamily: AppConstants.appFontFamily,
-                               )
-
-                        ),
+                              color: AppColors.whiteColor,
+                              fontSize: dimen14,
+                              fontFamily: AppConstants.appFontFamily,
+                            )),
                         SizedBox(
                           height: dimen15,
                         ),
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left:35, right: 8),
+                              padding:
+                                  const EdgeInsets.only(left: 35, right: 8),
                               child: Image.asset(
                                 Res.ic_email,
                                 height: dimen14,
@@ -74,10 +76,10 @@ class ProfileScreen extends GetView<ProfileController> {
                             ),
                             Text("demo_email".tr,
                                 style: TextStyle(
-                                    color: AppColors.whiteColor,
-                                    fontSize: dimen12,
-                                    fontFamily: AppConstants.appFontFamily,
-                                   )),
+                                  color: AppColors.whiteColor,
+                                  fontSize: dimen12,
+                                  fontFamily: AppConstants.appFontFamily,
+                                )),
                           ],
                         ),
                         SizedBox(
@@ -86,7 +88,8 @@ class ProfileScreen extends GetView<ProfileController> {
                         Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left:35, right: 8),
+                              padding:
+                                  const EdgeInsets.only(left: 35, right: 8),
                               child: Image.asset(
                                 Res.ic_phone,
                                 height: dimen12,
@@ -96,10 +99,10 @@ class ProfileScreen extends GetView<ProfileController> {
                             ),
                             Text("demo_phone_number".tr,
                                 style: TextStyle(
-                                    color: AppColors.whiteColor,
-                                    fontSize: dimen12,
-                                    fontFamily: AppConstants.appFontFamily,
-                                    )),
+                                  color: AppColors.whiteColor,
+                                  fontSize: dimen12,
+                                  fontFamily: AppConstants.appFontFamily,
+                                )),
                           ],
                         ),
                       ],
@@ -124,12 +127,13 @@ class ProfileScreen extends GetView<ProfileController> {
                 child: Container(
                   margin: const EdgeInsets.only(top: 30, left: 20, right: 20),
                   decoration: CommonFunction.cardDecoration(),
-                  child:Column(
+                  child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 20,left: 15,right: 20),
+                        padding:
+                            const EdgeInsets.only(top: 20, left: 15, right: 20),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -154,24 +158,22 @@ class ProfileScreen extends GetView<ProfileController> {
                                                 height: 10,
                                                 width: 10,
                                                 decoration: BoxDecoration(
-                                                    color: AppColors.primaryColor,
+                                                    color:
+                                                        AppColors.primaryColor,
                                                     border: Border.all(
-                                                        color: AppColors.whiteColor
-                                                    ),
-                                                    shape: BoxShape.circle
-                                                ),
-                                              )
-                                          ),
+                                                        color: AppColors
+                                                            .whiteColor),
+                                                    shape: BoxShape.circle),
+                                              )),
                                           beforeLineStyle: const LineStyle(
                                             color: AppColors.whiteColor,
                                             thickness: 8,
                                           ),
-                                          afterLineStyle:const LineStyle(
+                                          afterLineStyle: const LineStyle(
                                             color: AppColors.whiteColor,
                                             thickness: 8,
                                           ),
-                                        )
-                                    ),
+                                        )),
                                     SizedBox(
                                         height: 57,
                                         width: 20,
@@ -187,24 +189,22 @@ class ProfileScreen extends GetView<ProfileController> {
                                                 height: 10,
                                                 width: 10,
                                                 decoration: BoxDecoration(
-                                                    color: AppColors.primaryColor,
+                                                    color:
+                                                        AppColors.primaryColor,
                                                     border: Border.all(
-                                                        color: AppColors.whiteColor
-                                                    ),
-                                                    shape: BoxShape.circle
-                                                ),
-                                              )
-                                          ),
+                                                        color: AppColors
+                                                            .whiteColor),
+                                                    shape: BoxShape.circle),
+                                              )),
                                           beforeLineStyle: const LineStyle(
                                             color: AppColors.blackColor,
                                             thickness: 8,
                                           ),
-                                          afterLineStyle:const LineStyle(
+                                          afterLineStyle: const LineStyle(
                                             color: AppColors.gradientColor,
                                             thickness: 8,
                                           ),
-                                        )
-                                    ),
+                                        )),
                                     SizedBox(
                                         height: 38,
                                         width: 30,
@@ -219,7 +219,8 @@ class ProfileScreen extends GetView<ProfileController> {
                                             color: AppColors.gradientColor,
                                             indicator: SizedBox(
                                               height: 20,
-                                              child: Image.asset(Res.ic_coin_round,
+                                              child: Image.asset(
+                                                Res.ic_coin_round,
                                               ),
                                             ),
                                           ),
@@ -227,69 +228,105 @@ class ProfileScreen extends GetView<ProfileController> {
                                               color: AppColors.gradientColor,
                                               thickness: 8,
                                             ),*/
-                                        )
-                                    ),
+                                        )),
                                   ],
                                 ),
                                 Container(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.only(left: 15,top: 5),
-                                            child: Text(controller.levelDetails['initial_level'],style: TextStyle(
-                                                color: AppColors.whiteColor,
-                                                fontSize: dimen13,
-                                                fontFamily: AppConstants.appFontFamily,
-                                                fontWeight:
-                                                AppConstants.semiBoldFont),),
+                                            padding: const EdgeInsets.only(
+                                                left: 15, top: 5),
+                                            child: Text(
+                                              controller.levelDetails[
+                                                  'initial_level'],
+                                              style: TextStyle(
+                                                  color: AppColors.whiteColor,
+                                                  fontSize: dimen13,
+                                                  fontFamily: AppConstants
+                                                      .appFontFamily,
+                                                  fontWeight: AppConstants
+                                                      .semiBoldFont),
+                                            ),
                                           ),
                                           Padding(
-                                            padding: const EdgeInsets.only(left: 8),
-                                            child: Image.asset(Res.ic_level_up,height: 22,width: 25,),
+                                            padding:
+                                                const EdgeInsets.only(left: 8),
+                                            child: Image.asset(
+                                              Res.ic_level_up,
+                                              height: 22,
+                                              width: 25,
+                                            ),
                                           )
                                         ],
                                       ),
                                       Padding(
-                                        padding:  const EdgeInsets.only(left: 12,top: 15),
-                                        child: Text(controller.levelDetails['end_level_description'],style:TextStyle(
-                                            color: AppColors.whiteColor.withOpacity(0.3),
-                                            fontSize: dimen12,
-                                            fontFamily: AppConstants.appFontFamily,
-                                            fontWeight:
-                                            AppConstants.semiBoldFont
-                                        )),
+                                        padding: const EdgeInsets.only(
+                                            left: 12, top: 15),
+                                        child: Text(
+                                            controller.levelDetails[
+                                                'end_level_description'],
+                                            style: TextStyle(
+                                                color: AppColors.whiteColor
+                                                    .withOpacity(0.3),
+                                                fontSize: dimen12,
+                                                fontFamily:
+                                                    AppConstants.appFontFamily,
+                                                fontWeight:
+                                                    AppConstants.semiBoldFont)),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(top: 5),
                                         child: Row(
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsets.only(left: 5),
-                                              child: Image.asset(Res.ic_entry_amount,height: 35,width: 30,),
+                                              padding: const EdgeInsets.only(
+                                                  left: 5),
+                                              child: Image.asset(
+                                                Res.ic_entry_amount,
+                                                height: 35,
+                                                width: 30,
+                                              ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.only(left: 10),
+                                              padding: const EdgeInsets.only(
+                                                  left: 10),
                                               child: Row(
-                                                children:  [
-                                                  Text(controller.levelDetails['end_level_entry_amount'],style: TextStyle(
-                                                      color: AppColors.whiteColor,
-                                                      fontSize: dimen10,
-                                                      fontFamily: AppConstants.appFontFamily,
-                                                      fontWeight:
-                                                      AppConstants.semiBoldFont
-                                                  ),),
-                                                  Padding(
-                                                    padding: const EdgeInsets.only(left: 3),
-                                                    child: Text(controller.levelDetails['end_level_entry_amount_title'],style: TextStyle(
-                                                        color: AppColors.whiteColor,
+                                                children: [
+                                                  Text(
+                                                    controller.levelDetails[
+                                                        'end_level_entry_amount'],
+                                                    style: TextStyle(
+                                                        color: AppColors
+                                                            .whiteColor,
                                                         fontSize: dimen10,
-                                                        fontFamily: AppConstants.appFontFamily,
-                                                        fontWeight:
-                                                        AppConstants.semiBoldFont
-                                                    ),),
+                                                        fontFamily: AppConstants
+                                                            .appFontFamily,
+                                                        fontWeight: AppConstants
+                                                            .semiBoldFont),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            left: 3),
+                                                    child: Text(
+                                                      controller.levelDetails[
+                                                          'end_level_entry_amount_title'],
+                                                      style: TextStyle(
+                                                          color: AppColors
+                                                              .whiteColor,
+                                                          fontSize: dimen10,
+                                                          fontFamily:
+                                                              AppConstants
+                                                                  .appFontFamily,
+                                                          fontWeight:
+                                                              AppConstants
+                                                                  .semiBoldFont),
+                                                    ),
                                                   )
                                                 ],
                                               ),
@@ -298,32 +335,48 @@ class ProfileScreen extends GetView<ProfileController> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 12,top: 15),
-                                        child: Text(controller.levelDetails['end_level'],style: TextStyle(
-                                            color: AppColors.whiteColor,
-                                            fontSize: dimen13,
-                                            fontFamily: AppConstants.appFontFamily,
-                                            fontWeight:
-                                            AppConstants.semiBoldFont
-                                        ),),
+                                        padding: const EdgeInsets.only(
+                                            left: 12, top: 15),
+                                        child: Text(
+                                          controller.levelDetails['end_level'],
+                                          style: TextStyle(
+                                              color: AppColors.whiteColor,
+                                              fontSize: dimen13,
+                                              fontFamily:
+                                                  AppConstants.appFontFamily,
+                                              fontWeight:
+                                                  AppConstants.semiBoldFont),
+                                        ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 12,top: 20,bottom: 5,right: 15),
+                                        padding: const EdgeInsets.only(
+                                            left: 12,
+                                            top: 20,
+                                            bottom: 5,
+                                            right: 15),
                                         child: Container(
                                           height: 30,
                                           alignment: Alignment.center,
                                           decoration: BoxDecoration(
                                               color: AppColors.whiteColor,
-                                              borderRadius: BorderRadius.circular(2)
+                                              borderRadius:
+                                                  BorderRadius.circular(2)),
+                                          padding: const EdgeInsets.only(
+                                              left: 10,
+                                              top: 4,
+                                              right: 15,
+                                              bottom: 5),
+                                          child: Text(
+                                            controller.levelDetails[
+                                                'level_completion_description']!,
+                                            style: TextStyle(
+                                                color: AppColors.blackColor,
+                                                fontSize: dimen8,
+                                                fontFamily:
+                                                    AppConstants.appFontFamily,
+                                                fontWeight:
+                                                    AppConstants.semiBoldFont),
                                           ),
-                                          padding: const EdgeInsets.only(left: 10,top: 4,right: 15,bottom: 5),
-                                          child: Text(controller.levelDetails['level_completion_description']!,style: TextStyle(
-                                              color: AppColors.blackColor,
-                                              fontSize: dimen8,
-                                              fontFamily: AppConstants.appFontFamily,
-                                              fontWeight:
-                                              AppConstants.semiBoldFont
-                                          ),),
                                         ),
                                       )
                                     ],
@@ -333,7 +386,11 @@ class ProfileScreen extends GetView<ProfileController> {
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 5),
-                              child: Image.asset(Res.ic_forward,height: 13,width: 13,),
+                              child: Image.asset(
+                                Res.ic_forward,
+                                height: 13,
+                                width: 13,
+                              ),
                             )
                           ],
                         ),
@@ -349,7 +406,7 @@ class ProfileScreen extends GetView<ProfileController> {
                   child: Padding(
                       padding: const EdgeInsets.all(1.9),
                       child: Container(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                               top: 10, bottom: 10, left: 5, right: 5),
                           decoration: CommonFunction.defaultBoxDecoration(
                               boarderRadius: 10.0),
@@ -370,11 +427,13 @@ class ProfileScreen extends GetView<ProfileController> {
                                   ),
                                   Text("playing_history".tr,
                                       style: TextStyle(
-                                          color: CommonFunction.textThemeColor(),
+                                          color:
+                                              CommonFunction.textThemeColor(),
                                           fontSize: dimen12,
-                                          fontFamily: AppConstants.appFontFamily,
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
                                           fontWeight:
-                                          AppConstants.semiBoldFont)),
+                                              AppConstants.semiBoldFont)),
                                 ],
                               ),
                               Padding(
@@ -390,9 +449,8 @@ class ProfileScreen extends GetView<ProfileController> {
               ),
               Flexible(
                 child: GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     Get.toNamed(AppRoutes.myInfo);
-
                   },
                   child: Container(
                     margin: const EdgeInsets.only(top: 30, left: 15, right: 15),
@@ -421,11 +479,13 @@ class ProfileScreen extends GetView<ProfileController> {
                                     ),
                                     Text("my_account".tr,
                                         style: TextStyle(
-                                            color: CommonFunction.textThemeColor(),
+                                            color:
+                                                CommonFunction.textThemeColor(),
                                             fontSize: dimen12,
-                                            fontFamily: AppConstants.appFontFamily,
+                                            fontFamily:
+                                                AppConstants.appFontFamily,
                                             fontWeight:
-                                            AppConstants.semiBoldFont)),
+                                                AppConstants.semiBoldFont)),
                                   ],
                                 ),
                                 Padding(
@@ -468,11 +528,13 @@ class ProfileScreen extends GetView<ProfileController> {
                                   ),
                                   Text("Organizer Account".tr,
                                       style: TextStyle(
-                                          color: CommonFunction.textThemeColor(),
+                                          color:
+                                              CommonFunction.textThemeColor(),
                                           fontSize: dimen12,
-                                          fontFamily: AppConstants.appFontFamily,
+                                          fontFamily:
+                                              AppConstants.appFontFamily,
                                           fontWeight:
-                                          AppConstants.semiBoldFont)),
+                                              AppConstants.semiBoldFont)),
                                 ],
                               ),
                               Padding(
@@ -488,9 +550,9 @@ class ProfileScreen extends GetView<ProfileController> {
               ),
               Flexible(
                 child: GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     Get.toNamed(AppRoutes.currentPassword);
-                    },
+                  },
                   child: Container(
                     margin: const EdgeInsets.only(top: 30, left: 15, right: 15),
                     decoration: CommonFunction.activeBoxDecoration(),
@@ -518,11 +580,13 @@ class ProfileScreen extends GetView<ProfileController> {
                                     ),
                                     Text("change_password".tr,
                                         style: TextStyle(
-                                            color: CommonFunction.textThemeColor(),
+                                            color:
+                                                CommonFunction.textThemeColor(),
                                             fontSize: dimen12,
-                                            fontFamily: AppConstants.appFontFamily,
+                                            fontFamily:
+                                                AppConstants.appFontFamily,
                                             fontWeight:
-                                            AppConstants.semiBoldFont)),
+                                                AppConstants.semiBoldFont)),
                                   ],
                                 ),
                                 Padding(

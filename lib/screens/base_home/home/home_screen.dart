@@ -10,6 +10,8 @@ import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends GetView<HomeScreenController> {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -30,7 +32,8 @@ class HomeScreen extends GetView<HomeScreenController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 15),
                       decoration: CommonFunction.boxDecoration(),
                       child: Wrap(
                         crossAxisAlignment: WrapCrossAlignment.center,
@@ -75,7 +78,8 @@ class HomeScreen extends GetView<HomeScreenController> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 30, left: 15, right: 15),
+                      padding:
+                          const EdgeInsets.only(top: 30, left: 15, right: 15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -123,70 +127,93 @@ class HomeScreen extends GetView<HomeScreenController> {
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
                           return InkWell(
-                            onTap: (){
+                            onTap: () {
                               Get.offNamed(AppRoutes.createRoom);
                             },
                             child: Container(
-                              margin: const EdgeInsets.symmetric(horizontal: 10,),
-                              decoration: CommonFunction.selectedCardDecoration(),
+                              margin: const EdgeInsets.symmetric(
+                                horizontal: 10,
+                              ),
+                              decoration:
+                                  CommonFunction.selectedCardDecoration(),
                               child: Padding(
                                 padding: const EdgeInsets.all(1.9),
                                 child: Container(
-                                  padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
-                                  decoration: CommonFunction.selectedCardDecoration(),
+                                  padding: const EdgeInsets.only(
+                                      top: 10, left: 15, right: 15),
+                                  decoration:
+                                      CommonFunction.selectedCardDecoration(),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             'OPPO IPL',
                                             style: TextStyle(
-                                              color: CommonFunction.selectedTextThemeColor(),
+                                              color: CommonFunction
+                                                  .selectedTextThemeColor(),
                                               fontSize: dimen13,
-                                              fontFamily: AppConstants.appFontFamily,
-                                              fontWeight: AppConstants.semiBoldFont,
+                                              fontFamily:
+                                                  AppConstants.appFontFamily,
+                                              fontWeight:
+                                                  AppConstants.semiBoldFont,
                                             ),
                                           ),
                                           Text(
                                             'Public',
                                             style: TextStyle(
-                                              color: CommonFunction.selectedTextThemeColor(),
+                                              color: CommonFunction
+                                                  .selectedTextThemeColor(),
                                               fontSize: dimen12,
-                                              fontFamily: AppConstants.appFontFamily,
-                                              fontWeight: AppConstants.semiBoldFont,
+                                              fontFamily:
+                                                  AppConstants.appFontFamily,
+                                              fontWeight:
+                                                  AppConstants.semiBoldFont,
                                             ),
                                           ),
                                         ],
                                       ),
                                       const Padding(
-                                        padding: EdgeInsets.symmetric(vertical: 10),
+                                        padding:
+                                            EdgeInsets.symmetric(vertical: 10),
                                         child: Divider(
                                           color: AppColors.gradientColor1,
                                           thickness: 0.3,
                                         ),
                                       ),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
                                                 'Mumbai Indians',
                                                 style: TextStyle(
-                                                  color: CommonFunction.selectedTextThemeColor(),
+                                                  color: CommonFunction
+                                                      .selectedTextThemeColor(),
                                                   fontSize: dimen10,
-                                                  fontFamily: AppConstants.appFontFamily,
-                                                  fontWeight: AppConstants.regularFont,
+                                                  fontFamily: AppConstants
+                                                      .appFontFamily,
+                                                  fontWeight:
+                                                      AppConstants.regularFont,
                                                 ),
                                               ),
                                               Wrap(
-                                                crossAxisAlignment: WrapCrossAlignment.center,
+                                                crossAxisAlignment:
+                                                    WrapCrossAlignment.center,
                                                 children: [
                                                   Padding(
-                                                    padding: const EdgeInsets.only(top: 10, bottom: 10, right: 10),
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            top: 10,
+                                                            bottom: 10,
+                                                            right: 10),
                                                     child: Image.asset(
                                                       Res.ic_mi_logo,
                                                       width: 40,
@@ -197,9 +224,12 @@ class HomeScreen extends GetView<HomeScreenController> {
                                                   Text(
                                                     'MI',
                                                     style: TextStyle(
-                                                      color: CommonFunction.selectedTextThemeColor(),
-                                                      fontFamily: AppConstants.appFontFamily,
-                                                      fontWeight: AppConstants.semiBoldFont,
+                                                      color: CommonFunction
+                                                          .selectedTextThemeColor(),
+                                                      fontFamily: AppConstants
+                                                          .appFontFamily,
+                                                      fontWeight: AppConstants
+                                                          .semiBoldFont,
                                                     ),
                                                   ),
                                                 ],
@@ -209,37 +239,52 @@ class HomeScreen extends GetView<HomeScreenController> {
                                           Text(
                                             '3 hrs',
                                             style: TextStyle(
-                                              color: CommonFunction.selectedTextThemeColor(),
+                                              color: CommonFunction
+                                                  .selectedTextThemeColor(),
                                               fontSize: dimen11,
-                                              fontFamily: AppConstants.appFontFamily,
-                                              fontWeight: AppConstants.regularFont,
+                                              fontFamily:
+                                                  AppConstants.appFontFamily,
+                                              fontWeight:
+                                                  AppConstants.regularFont,
                                             ),
                                           ),
                                           Column(
-                                            crossAxisAlignment: CrossAxisAlignment.end,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
                                             children: [
                                               Text(
                                                 'Delhi Capitals',
                                                 style: TextStyle(
-                                                  color: CommonFunction.selectedTextThemeColor(),
+                                                  color: CommonFunction
+                                                      .selectedTextThemeColor(),
                                                   fontSize: dimen10,
-                                                  fontFamily: AppConstants.appFontFamily,
-                                                  fontWeight: AppConstants.regularFont,
+                                                  fontFamily: AppConstants
+                                                      .appFontFamily,
+                                                  fontWeight:
+                                                      AppConstants.regularFont,
                                                 ),
                                               ),
                                               Wrap(
-                                                crossAxisAlignment: WrapCrossAlignment.center,
+                                                crossAxisAlignment:
+                                                    WrapCrossAlignment.center,
                                                 children: [
                                                   Text(
                                                     'DC',
                                                     style: TextStyle(
-                                                      color: CommonFunction.selectedTextThemeColor(),
-                                                      fontFamily: AppConstants.appFontFamily,
-                                                      fontWeight: AppConstants.semiBoldFont,
+                                                      color: CommonFunction
+                                                          .selectedTextThemeColor(),
+                                                      fontFamily: AppConstants
+                                                          .appFontFamily,
+                                                      fontWeight: AppConstants
+                                                          .semiBoldFont,
                                                     ),
                                                   ),
                                                   Padding(
-                                                    padding: const EdgeInsets.only(top: 10, bottom: 10, left: 10),
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            top: 10,
+                                                            bottom: 10,
+                                                            left: 10),
                                                     child: Image.asset(
                                                       Res.ic_dc_logo,
                                                       width: 40,
@@ -254,56 +299,72 @@ class HomeScreen extends GetView<HomeScreenController> {
                                         ],
                                       ),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Wrap(
-                                            crossAxisAlignment: WrapCrossAlignment.center,
+                                            crossAxisAlignment:
+                                                WrapCrossAlignment.center,
                                             spacing: 8,
                                             children: [
                                               Container(
                                                 decoration: BoxDecoration(
-                                                  gradient: CommonFunction.themeSolidGradient,
-                                                  borderRadius: BorderRadius.circular(10),
+                                                  gradient: CommonFunction
+                                                      .themeSolidGradient,
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
                                                 ),
-                                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 10,
+                                                        vertical: 5),
                                                 child: Text(
                                                   'PRICE',
                                                   style: TextStyle(
                                                     color: AppColors.whiteColor,
                                                     fontSize: dimen8,
-                                                    fontFamily: AppConstants.appFontFamily,
-                                                    fontWeight: AppConstants.semiBoldFont,
+                                                    fontFamily: AppConstants
+                                                        .appFontFamily,
+                                                    fontWeight: AppConstants
+                                                        .semiBoldFont,
                                                   ),
                                                 ),
                                               ),
                                               Text(
                                                 '8 Crore',
                                                 style: TextStyle(
-                                                  color: CommonFunction.selectedTextThemeColor(),
+                                                  color: CommonFunction
+                                                      .selectedTextThemeColor(),
                                                   fontSize: dimen10,
-                                                  fontFamily: AppConstants.appFontFamily,
+                                                  fontFamily: AppConstants
+                                                      .appFontFamily,
                                                 ),
                                               ),
                                             ],
                                           ),
                                           Wrap(
-                                            crossAxisAlignment: WrapCrossAlignment.center,
+                                            crossAxisAlignment:
+                                                WrapCrossAlignment.center,
                                             spacing: 5,
                                             children: [
                                               Text(
                                                 '4:2',
                                                 style: TextStyle(
-                                                  color: CommonFunction.selectedTextThemeColor(),
+                                                  color: CommonFunction
+                                                      .selectedTextThemeColor(),
                                                   fontSize: dimen10,
-                                                  fontFamily: AppConstants.appFontFamily,
+                                                  fontFamily: AppConstants
+                                                      .appFontFamily,
                                                 ),
                                               ),
                                               Text(
                                                 'WD',
                                                 style: TextStyle(
-                                                  color: CommonFunction.selectedTextThemeColor(),
+                                                  color: CommonFunction
+                                                      .selectedTextThemeColor(),
                                                   fontSize: dimen10,
-                                                  fontFamily: AppConstants.appFontFamily,
+                                                  fontFamily: AppConstants
+                                                      .appFontFamily,
                                                 ),
                                               ),
                                             ],
@@ -392,56 +453,73 @@ class HomeScreen extends GetView<HomeScreenController> {
                               padding: const EdgeInsets.all(1.9),
                               child: Container(
                                 padding: const EdgeInsets.all(15),
-                                decoration: CommonFunction.unSelectedCardDecoration(),
+                                decoration:
+                                    CommonFunction.unSelectedCardDecoration(),
                                 child: Column(
                                   children: [
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
                                           'OPPO IPL',
                                           style: TextStyle(
-                                            color: CommonFunction.textThemeColor(),
+                                            color:
+                                                CommonFunction.textThemeColor(),
                                             fontSize: dimen13,
-                                            fontFamily: AppConstants.appFontFamily,
-                                            fontWeight: AppConstants.semiBoldFont,
+                                            fontFamily:
+                                                AppConstants.appFontFamily,
+                                            fontWeight:
+                                                AppConstants.semiBoldFont,
                                           ),
                                         ),
                                         Image.asset(
                                           Res.ic_notification,
                                           width: 20,
                                           height: 20,
-                                          color: CommonFunction.textThemeColor(),
+                                          color:
+                                              CommonFunction.textThemeColor(),
                                         ),
                                       ],
                                     ),
                                     const Padding(
-                                      padding: EdgeInsets.symmetric(vertical: 10),
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10),
                                       child: Divider(
                                         color: AppColors.blackColor,
                                         thickness: 0.2,
                                       ),
                                     ),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Rajasthan Royals',
                                               style: TextStyle(
-                                                color: CommonFunction.textThemeColor(),
+                                                color: CommonFunction
+                                                    .textThemeColor(),
                                                 fontSize: dimen10,
-                                                fontFamily: AppConstants.appFontFamily,
-                                                fontWeight: AppConstants.regularFont,
+                                                fontFamily:
+                                                    AppConstants.appFontFamily,
+                                                fontWeight:
+                                                    AppConstants.regularFont,
                                               ),
                                             ),
                                             Wrap(
-                                              crossAxisAlignment: WrapCrossAlignment.center,
+                                              crossAxisAlignment:
+                                                  WrapCrossAlignment.center,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsets.only(top: 10, bottom: 10, right: 10),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                          right: 10),
                                                   child: Image.asset(
                                                     Res.ic_mi_logo,
                                                     width: 40,
@@ -452,9 +530,12 @@ class HomeScreen extends GetView<HomeScreenController> {
                                                 Text(
                                                   'RR',
                                                   style: TextStyle(
-                                                    color: CommonFunction.textThemeColor(),
-                                                    fontFamily: AppConstants.appFontFamily,
-                                                    fontWeight: AppConstants.semiBoldFont,
+                                                    color: CommonFunction
+                                                        .textThemeColor(),
+                                                    fontFamily: AppConstants
+                                                        .appFontFamily,
+                                                    fontWeight: AppConstants
+                                                        .semiBoldFont,
                                                   ),
                                                 ),
                                               ],
@@ -464,37 +545,52 @@ class HomeScreen extends GetView<HomeScreenController> {
                                         Text(
                                           '7 hrs',
                                           style: TextStyle(
-                                            color: CommonFunction.textThemeColor(),
+                                            color:
+                                                CommonFunction.textThemeColor(),
                                             fontSize: dimen11,
-                                            fontFamily: AppConstants.appFontFamily,
-                                            fontWeight: AppConstants.semiBoldFont,
+                                            fontFamily:
+                                                AppConstants.appFontFamily,
+                                            fontWeight:
+                                                AppConstants.semiBoldFont,
                                           ),
                                         ),
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.end,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
                                           children: [
                                             Text(
                                               'Chennai Super Kings',
                                               style: TextStyle(
-                                                color: CommonFunction.textThemeColor(),
+                                                color: CommonFunction
+                                                    .textThemeColor(),
                                                 fontSize: dimen10,
-                                                fontFamily: AppConstants.appFontFamily,
-                                                fontWeight: AppConstants.regularFont,
+                                                fontFamily:
+                                                    AppConstants.appFontFamily,
+                                                fontWeight:
+                                                    AppConstants.regularFont,
                                               ),
                                             ),
                                             Wrap(
-                                              crossAxisAlignment: WrapCrossAlignment.center,
+                                              crossAxisAlignment:
+                                                  WrapCrossAlignment.center,
                                               children: [
                                                 Text(
                                                   'CSK',
                                                   style: TextStyle(
-                                                    color: CommonFunction.textThemeColor(),
-                                                    fontFamily: AppConstants.appFontFamily,
-                                                    fontWeight: AppConstants.semiBoldFont,
+                                                    color: CommonFunction
+                                                        .textThemeColor(),
+                                                    fontFamily: AppConstants
+                                                        .appFontFamily,
+                                                    fontWeight: AppConstants
+                                                        .semiBoldFont,
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsets.only(top: 10, bottom: 10, left: 10),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                          left: 10),
                                                   child: Image.asset(
                                                     Res.ic_dc_logo,
                                                     width: 40,
@@ -509,56 +605,72 @@ class HomeScreen extends GetView<HomeScreenController> {
                                       ],
                                     ),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Wrap(
-                                          crossAxisAlignment: WrapCrossAlignment.center,
+                                          crossAxisAlignment:
+                                              WrapCrossAlignment.center,
                                           spacing: 8,
                                           children: [
                                             Container(
                                               decoration: BoxDecoration(
-                                                gradient: CommonFunction.themeGradient,
-                                                borderRadius: BorderRadius.circular(30),
+                                                gradient: CommonFunction
+                                                    .themeGradient,
+                                                borderRadius:
+                                                    BorderRadius.circular(30),
                                               ),
-                                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 10,
+                                                      vertical: 5),
                                               child: Text(
                                                 'PRICE',
                                                 style: TextStyle(
                                                   color: AppColors.whiteColor,
                                                   fontSize: dimen8,
-                                                  fontFamily: AppConstants.appFontFamily,
-                                                  fontWeight: AppConstants.semiBoldFont,
+                                                  fontFamily: AppConstants
+                                                      .appFontFamily,
+                                                  fontWeight:
+                                                      AppConstants.semiBoldFont,
                                                 ),
                                               ),
                                             ),
                                             Text(
                                               '10 Crore',
                                               style: TextStyle(
-                                                color: CommonFunction.textThemeColor(),
+                                                color: CommonFunction
+                                                    .textThemeColor(),
                                                 fontSize: dimen10,
-                                                fontFamily: AppConstants.appFontFamily,
+                                                fontFamily:
+                                                    AppConstants.appFontFamily,
                                               ),
                                             ),
                                           ],
                                         ),
                                         Wrap(
-                                          crossAxisAlignment: WrapCrossAlignment.center,
+                                          crossAxisAlignment:
+                                              WrapCrossAlignment.center,
                                           spacing: 5,
                                           children: [
                                             Text(
                                               '4:1',
                                               style: TextStyle(
-                                                color: CommonFunction.textThemeColor(),
+                                                color: CommonFunction
+                                                    .textThemeColor(),
                                                 fontSize: dimen10,
-                                                fontFamily: AppConstants.appFontFamily,
+                                                fontFamily:
+                                                    AppConstants.appFontFamily,
                                               ),
                                             ),
                                             Text(
                                               'WD',
                                               style: TextStyle(
-                                                color: CommonFunction.textThemeColor(),
+                                                color: CommonFunction
+                                                    .textThemeColor(),
                                                 fontSize: dimen10,
-                                                fontFamily: AppConstants.appFontFamily,
+                                                fontFamily:
+                                                    AppConstants.appFontFamily,
                                               ),
                                             ),
                                           ],
@@ -632,13 +744,16 @@ class HomeScreen extends GetView<HomeScreenController> {
                               padding: const EdgeInsets.all(1.9),
                               child: Container(
                                 padding: const EdgeInsets.all(15),
-                                decoration: CommonFunction.unSelectedCardDecoration(),
+                                decoration:
+                                    CommonFunction.unSelectedCardDecoration(),
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     Row(
-                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Image.asset(
                                           Res.ic_profile_placeholder,
@@ -649,15 +764,20 @@ class HomeScreen extends GetView<HomeScreenController> {
                                           width: 10,
                                         ),
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
                                               'Indian Premier League',
                                               style: TextStyle(
-                                                color: CommonFunction.textThemeColor(),
-                                                fontFamily: AppConstants.appFontFamily,
-                                                fontWeight: AppConstants.semiBoldFont,
+                                                color: CommonFunction
+                                                    .textThemeColor(),
+                                                fontFamily:
+                                                    AppConstants.appFontFamily,
+                                                fontWeight:
+                                                    AppConstants.semiBoldFont,
                                               ),
                                             ),
                                             const SizedBox(
@@ -666,9 +786,12 @@ class HomeScreen extends GetView<HomeScreenController> {
                                             Text(
                                               '54 Matches',
                                               style: TextStyle(
-                                                color: CommonFunction.textThemeColor(),
-                                                fontFamily: AppConstants.appFontFamily,
-                                                fontWeight: AppConstants.regularFont,
+                                                color: CommonFunction
+                                                    .textThemeColor(),
+                                                fontFamily:
+                                                    AppConstants.appFontFamily,
+                                                fontWeight:
+                                                    AppConstants.regularFont,
                                               ),
                                             )
                                           ],
@@ -694,7 +817,6 @@ class HomeScreen extends GetView<HomeScreenController> {
                 ),
               ],
             ),
-
             const SizedBox(
               height: 25,
             )

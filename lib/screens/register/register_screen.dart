@@ -6,13 +6,14 @@ import 'package:fantasy_gaming/utils/screen_header.dart';
 import 'package:fantasy_gaming/utils/theme/app_colors.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../utils/dimens.dart';
 import 'register_controller.dart';
 
 class RegisterScreen extends GetView<RegisterController> {
+  const RegisterScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -44,11 +45,14 @@ class RegisterScreen extends GetView<RegisterController> {
               Obx(
                 () => Container(
                   margin: const EdgeInsets.only(top: 30),
-                  decoration: controller.emailText.isNotEmpty ? CommonFunction.activeBoxDecoration() : CommonFunction.inactiveBoxDecoration(),
+                  decoration: controller.emailText.isNotEmpty
+                      ? CommonFunction.activeBoxDecoration()
+                      : CommonFunction.inactiveBoxDecoration(),
                   child: Padding(
                       padding: const EdgeInsets.all(1.9),
                       child: Container(
-                          decoration: CommonFunction.defaultBoxDecoration(boarderRadius: 12.0),
+                          decoration: CommonFunction.defaultBoxDecoration(
+                              boarderRadius: 12.0),
                           child: Row(
                             children: [
                               SizedBox(
@@ -58,7 +62,9 @@ class RegisterScreen extends GetView<RegisterController> {
                                 Res.ic_email,
                                 width: dimen20,
                                 height: dimen20,
-                                color: controller.emailText.isNotEmpty ? CommonFunction.textThemeColor() : Get.theme.hintColor,
+                                color: controller.emailText.isNotEmpty
+                                    ? CommonFunction.textThemeColor()
+                                    : Get.theme.hintColor,
                               ),
                               SizedBox(
                                 width: dimen16,
@@ -70,7 +76,11 @@ class RegisterScreen extends GetView<RegisterController> {
                                     decoration: InputDecoration(
                                         hintText: 'email'.tr,
                                         border: InputBorder.none,
-                                        hintStyle: TextStyle(fontSize: dimen12, fontFamily: AppConstants.appFontFamily, color: AppColors.hintColor)),
+                                        hintStyle: TextStyle(
+                                            fontSize: dimen12,
+                                            fontFamily:
+                                                AppConstants.appFontFamily,
+                                            color: AppColors.hintColor)),
                                     onChanged: (String text) {
                                       controller.onChangedEmail(text);
                                     }),
@@ -93,9 +103,12 @@ class RegisterScreen extends GetView<RegisterController> {
               Obx(
                 () => Container(
                   margin: const EdgeInsets.only(top: 30),
-                  decoration: controller.passwordText.isNotEmpty ? CommonFunction.activeBoxDecoration() : CommonFunction.inactiveBoxDecoration(),
+                  decoration: controller.passwordText.isNotEmpty
+                      ? CommonFunction.activeBoxDecoration()
+                      : CommonFunction.inactiveBoxDecoration(),
                   child: Container(
-                      decoration: CommonFunction.defaultBoxDecoration(boarderRadius: 12.0),
+                      decoration: CommonFunction.defaultBoxDecoration(
+                          boarderRadius: 12.0),
                       child: Row(
                         children: [
                           SizedBox(
@@ -105,7 +118,9 @@ class RegisterScreen extends GetView<RegisterController> {
                             Res.ic_lock,
                             width: dimen20,
                             height: dimen20,
-                            color: controller.passwordText.isNotEmpty ? CommonFunction.textThemeColor() : Get.theme.hintColor,
+                            color: controller.passwordText.isNotEmpty
+                                ? CommonFunction.textThemeColor()
+                                : Get.theme.hintColor,
                           ),
                           SizedBox(
                             width: dimen16,
@@ -118,14 +133,18 @@ class RegisterScreen extends GetView<RegisterController> {
                                 decoration: InputDecoration(
                                     hintText: 'password'.tr,
                                     border: InputBorder.none,
-                                    hintStyle: TextStyle(fontSize: dimen12, fontFamily: AppConstants.appFontFamily, color: AppColors.hintColor)),
+                                    hintStyle: TextStyle(
+                                        fontSize: dimen12,
+                                        fontFamily: AppConstants.appFontFamily,
+                                        color: AppColors.hintColor)),
                                 onChanged: (String text) {
                                   controller.onChangedPassword(text);
                                 }),
                           ),
                           InkWell(
                               onTap: () {
-                                controller.seePassword.value = !controller.seePassword.value;
+                                controller.seePassword.value =
+                                    !controller.seePassword.value;
                               },
                               child: controller.seePassword.value
                                   ? Padding(
@@ -155,34 +174,46 @@ class RegisterScreen extends GetView<RegisterController> {
               Obx(
                 () => Container(
                   margin: const EdgeInsets.only(top: 30),
-                  decoration: controller.confirmPasswordText.isNotEmpty ? CommonFunction.activeBoxDecoration() : CommonFunction.inactiveBoxDecoration(),
+                  decoration: controller.confirmPasswordText.isNotEmpty
+                      ? CommonFunction.activeBoxDecoration()
+                      : CommonFunction.inactiveBoxDecoration(),
                   child: Container(
-                      decoration: CommonFunction.defaultBoxDecoration(boarderRadius: 12.0),
+                      decoration: CommonFunction.defaultBoxDecoration(
+                          boarderRadius: 12.0),
                       child: Row(
                         children: [
                           SizedBox(
                             width: dimen16,
                           ),
                           Image.asset(Res.ic_lock,
-                              width: dimen20, height: dimen20, color: controller.confirmPasswordText.isNotEmpty ? CommonFunction.textThemeColor() : Get.theme.hintColor),
+                              width: dimen20,
+                              height: dimen20,
+                              color: controller.confirmPasswordText.isNotEmpty
+                                  ? CommonFunction.textThemeColor()
+                                  : Get.theme.hintColor),
                           SizedBox(
                             width: dimen16,
                           ),
                           Expanded(
                             child: TextField(
                                 textInputAction: TextInputAction.next,
-                                obscureText: controller.seenConformPassword.value,
+                                obscureText:
+                                    controller.seenConformPassword.value,
                                 decoration: InputDecoration(
                                     hintText: 'confirm_password'.tr,
                                     border: InputBorder.none,
-                                    hintStyle: TextStyle(fontSize: dimen12, fontFamily: AppConstants.appFontFamily, color: AppColors.hintColor)),
+                                    hintStyle: TextStyle(
+                                        fontSize: dimen12,
+                                        fontFamily: AppConstants.appFontFamily,
+                                        color: AppColors.hintColor)),
                                 onChanged: (String text) {
                                   controller.onConfirmPassword(text);
                                 }),
                           ),
                           InkWell(
                             onTap: () {
-                              controller.seenConformPassword.value = !controller.seenConformPassword.value;
+                              controller.seenConformPassword.value =
+                                  !controller.seenConformPassword.value;
                             },
                             child: controller.seenConformPassword.value
                                 ? Padding(
@@ -210,8 +241,6 @@ class RegisterScreen extends GetView<RegisterController> {
                 ),
               ),
 
-
-
               GestureDetector(
                 onTap: () {
                   controller.isValid();
@@ -221,8 +250,12 @@ class RegisterScreen extends GetView<RegisterController> {
                     margin: const EdgeInsets.only(top: 50, bottom: 30),
                     decoration: CommonFunction.boxDecoration(),
                     child: Center(
-                      child:
-                          Text('sign_up'.tr, style: TextStyle(color: Colors.white, fontSize: dimen14, fontFamily: AppConstants.appFontFamily, fontWeight: AppConstants.boldFont)),
+                      child: Text('sign_up'.tr,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: dimen14,
+                              fontFamily: AppConstants.appFontFamily,
+                              fontWeight: AppConstants.boldFont)),
                     )),
               ),
 
@@ -247,7 +280,8 @@ class RegisterScreen extends GetView<RegisterController> {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   child: Container(
-                      decoration: CommonFunction.defaultBoxDecoration(boarderRadius: 30.0),
+                      decoration: CommonFunction.defaultBoxDecoration(
+                          boarderRadius: 30.0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -261,8 +295,11 @@ class RegisterScreen extends GetView<RegisterController> {
                             ),
                           ),
                           Text("signup_with_google".tr,
-                              style:
-                                  TextStyle(color: CommonFunction.textThemeColor(), fontSize: dimen12, fontFamily: AppConstants.appFontFamily, fontWeight: AppConstants.mediumFont))
+                              style: TextStyle(
+                                  color: CommonFunction.textThemeColor(),
+                                  fontSize: dimen12,
+                                  fontFamily: AppConstants.appFontFamily,
+                                  fontWeight: AppConstants.mediumFont))
                         ],
                       )),
                 ),

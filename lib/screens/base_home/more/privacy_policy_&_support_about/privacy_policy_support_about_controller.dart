@@ -1,7 +1,4 @@
-import 'package:fantasy_gaming/utils/app_constants.dart';
 import 'package:fantasy_gaming/utils/app_content_enum.dart';
-import 'package:fantasy_gaming/utils/theme/app_colors.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PrivacyPolicyAboutController extends GetxController {

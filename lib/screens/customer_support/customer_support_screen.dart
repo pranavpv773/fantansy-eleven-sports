@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CustomerSupportScreen extends GetView<CustomerSupportController> {
+  const CustomerSupportScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     CommonFunction().statusBarColor();
@@ -20,7 +22,7 @@ class CustomerSupportScreen extends GetView<CustomerSupportController> {
         ),
         body: SingleChildScrollView(
             child: Column(children: [
-          SizedBox(height: 130),
+          const SizedBox(height: 130),
           Center(
             child: Image.asset(Res.ic_contact_background),
           ),
